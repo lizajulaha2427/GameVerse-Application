@@ -125,17 +125,14 @@
       let yourUpiID = "jiya43985@okicici";
       let yourName = "Jiya";
 
-      // Generate UPI QR on page load
       var link = "upi://pay?pa=" + yourUpiID + "&pn=" + yourName + "&am=" + amount + "&cu=INR";
       var upi = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + encodeURIComponent(link);
       $(".get_qr").attr("src", upi);
 
-      // Handle the "Download Now" button
       $(".download_now").click(function () {
         $(".confirmation").show();
         $(".qr_code").hide();
         alert("Thank you! Your download will start shortly.");
-        // You can trigger your actual download here
       });
     });
   </script>
