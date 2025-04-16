@@ -251,11 +251,11 @@ verifyButton.addEventListener("click", () => {
     if (OTP == values) {
         step1.style.display = "none";
         step2.style.display = "none";
-        step3.style.display = "block"; // Show success step
+        step3.style.display = "block";
 
         setTimeout(() => {
-            window.location.href = "payment.html"; // ✅ Redirect after success display
-        }, 1000); // ⏱️ 1-second delay
+            window.location.href = "payment.html"; 
+        }, 1000); 
     } else {
         verifyButton.classList.add("error-shake");
         setTimeout(() => {
