@@ -15,7 +15,6 @@
       <h2 id="username"><%= user.username %></h2>
       <p id="email"><%= user.email %></p>
       
-      <!-- Only upload button kept -->
       <button class="btn" id="upload-picture-btn">Upload Picture</button>
       <button class="btn" id="share-profile-btn">Share Profile</button>
     </div>
@@ -33,7 +32,6 @@
     </div>
   </div>
 
-  <!-- Only Picture Upload Modal -->
   <div id="uploadPictureModal" class="modal">
     <div class="modal-content">
       <span class="close" id="closeUploadModal">&times;</span>
@@ -49,7 +47,6 @@
       document.getElementById('profile-pic').src = profileImage;
     }
 
-    // Upload Picture Modal
     const uploadPictureModal = document.getElementById("uploadPictureModal");
 
     document.getElementById('upload-picture-btn').addEventListener('click', function() {
@@ -77,14 +74,12 @@
         uploadPictureModal.style.display = "none";
     });
 
-    // Close modal if clicked outside
     window.onclick = function(event) {
         if (event.target == uploadPictureModal) {
             uploadPictureModal.style.display = "none";
         }
     };
 
-    // Logout handler
     document.getElementById('logout').addEventListener('click', function() {
         localStorage.clear();
         window.location.href = 'loginSignUp.ejs';
