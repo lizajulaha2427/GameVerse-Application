@@ -1,0 +1,509 @@
+nav {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: transparent;
+  padding: 20px 30px;
+  position: fixed;
+  top: 0;
+  width: 100%; 
+  z-index: 1000;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  margin-right: 3px;
+}
+
+/* Navigation Bar */
+.nav-left {
+  margin-left: 0;
+  display: flex;
+  align-items: center;
+  margin-right: 0px;
+  gap: 30px;
+  position: relative;
+}
+
+.nav-item {
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.nav-item:hover {
+  color: #4568f7;
+}
+
+#iframe-container {
+  display: none; /* Initially hidden */
+  position: fixed; /* Fixed to the viewport */
+  top: 0; /* Start at the top */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background: rgba(0, 0, 0, 0.7); /* Dark background with slight transparency */
+  z-index: 100; /* Ensure it is above other content */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+#iframe-container .iframe-wrapper {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the iframe container */
+  width: 80%; /* Default width for large screens */
+  height: 60%; /* Default height for large screens */
+  background-color: white; /* Background for iframe container */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Add shadow for visual effect */
+  position: relative;
+}
+
+#iframe-container iframe {
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Full height of the container */
+  border: none; /* Remove default iframe border */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 200; /* Make sure it is above the iframe */
+}
+
+.close-btn:hover {
+  color: rgb(51, 50, 50);
+}
+
+.nav-middle {
+  margin-left: 0px; /* Removed margin-left */
+  margin-right: 0px;
+  flex-grow: 0.9;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar {
+  width: 63%;
+  padding: 10px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 8px;
+  background-color: #181818;
+  color: #ccc8e7;
+}
+
+.nav-right {
+  margin-left: 0px; /* Removed margin-left */
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Reduced gap to 15px */
+  margin-right: 50px;
+}
+
+.nav-item {
+  color: #ecebf4;
+  text-decoration: none;
+  font-size: 1.3em;
+  gap: 45px;
+}
+
+.icon {
+  width: 38px;
+  height: 38px;
+  gap: 10px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+    margin-top: 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;position: relative;
+    z-index: 1;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: transparent;
+  color: #fff;
+  padding: 20px;
+}
+
+#bgvid {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100; /* Places the video behind other elements */
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #cdcbc9;
+    margin-bottom: 30px;
+    margin-top: 130px;
+    margin-left: 40px;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    margin-left: 35px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Adjusted to make the items more proportional */
+    gap: 15px;
+    justify-content: center;
+    margin-top: 90px;
+}
+
+.grid-item {
+  background-color: #060606;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.grid-item:hover .game-title {
+    opacity: 1;
+}
+
+.grid-item:hover img {
+    opacity: 0.5;
+}
+
+.grid-item .game-title {
+  font-size: 1.0em;
+  color: #ffffff;
+  margin: 10px 0;
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.grid-item:hover {
+    transform: scale(1.1);
+    background-color: #01090f;
+}
+
+
+hr{
+  margin-top: 240px;
+  opacity: 0.5;
+}
+footer {
+  width: 100%;
+  height: auto;
+  background-color:transparent;/* Dark background color */
+  padding: 20px;
+  color: #b0b0b0; /* Light grey text color */
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom:auto;
+  text-align: center; /* Center footer content */
+}
+.p_footer{
+
+  font-size: 1em;
+}
+  
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .footer-top, .footer-bottom {
+    max-width: 100%; /* Set a max width for the content within the footer */
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .logo {
+    max-width: 100px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-links {
+    margin-top: 10px;
+  }
+  
+  .footer-links a {
+    color: #b0b0b0;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+  
+  .footer-links a:hover {
+    color: white; /* Change color on hover */
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #444; 
+    padding-top: 20px;
+    flex-wrap: wrap; 
+  }
+  
+  .footer-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer-nav a {
+    color: #b0b0b0;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+  
+  .footer-nav a:hover {
+    color: white;
+  }
+  
+  .social-media {
+    display: flex;
+    justify-content: center;
+    gap: 17px;
+  }
+  
+  .social-media a img {
+    width: 35px; 
+    height: auto;
+  }
+  
+  .social-media a:hover img {
+    opacity: 0.8;
+  }
+  
+
+
+
+  /* For small screens*/
+@media only screen and (max-width: 600px) {
+  .grid-item .game-title {
+    font-size: 0.4em;
+    margin: 5px 0;
+  }
+  h1{
+    font-size: 1.8em;
+    margin-top: 100px;
+  }
+  p{
+    font-size: 0.8em;
+    margin-bottom: 15px;
+  }
+  .logo{
+    width: 12px;
+    height: 12px;
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+  .nav-middle{
+    flex-grow: 0.4;
+    margin-right: 0px;
+  }
+  .nav-right{
+    margin-left: 0px;
+    margin-right: 60px;
+    gap: 10px;
+  }
+  .nav-item{
+    font-size: 0.9em;
+    gap: 1px;
+    padding-left: 5px;
+  }
+  .search-bar{
+    padding: 13px;
+    font-size: 0.8em;
+    margin-left: -10px;
+
+  }
+  .icon{
+    width: 12px;
+    height: 12px;
+  }
+  .nav-left{
+    gap: 6px;
+  }
+  .footer-top{
+    margin-bottom: 5px;
+    padding: 0 15px;
+  }
+  hr{
+    margin-top: 200px;
+    margin-bottom: 0;
+  }
+  .p_footer{
+    font-size: 0.6em;
+    margin-top: 10px;
+  }
+  .footer-nav{
+    font-size: 0.6em;
+  }
+  .footer-links{
+    font-size: 0.6em;
+  }
+  .grid-container{
+    grid-template-columns: repeat(4, 1fr)
+  }
+  #iframe-container .iframe-wrapper {
+    width: 80%; /* Adjust width for smaller screens */
+    height: 42%; /* Adjust height for smaller screens */
+  }
+
+  #iframe-container iframe {
+    width: 100%; /* Ensure the iframe still takes full width */
+    height: 100%; /* Ensure the iframe still takes full height */
+  }
+
+  .close-btn {
+    font-size: 20px; /* Smaller close button for mobile */
+  }
+}
+
+/* For medium screens*/
+@media only screen and (min-width: 601px) and (max-width: 1000px) {
+  .grid-item .game-title {
+    font-size: 0.6em;
+    margin: 7px 0;
+  }
+  h1{
+    font-size: 1.6em;
+    margin-top: 140px;
+  }
+  p{
+    font-size: 1.1em;
+    margin-bottom: 20px;
+  }
+  .logo{
+    width: 25px;
+    height: 25px;
+    margin-left: 1px;
+    margin-right: 5px;
+  }
+  .nav-middle{
+    flex-grow: 0.7;
+    margin-right: 0px;
+  }
+  .nav-right{
+    margin-left: 0px;
+    margin-right: 50px;
+    gap: 20px;
+  }
+  .nav-item{
+    font-size: 1.2em;
+    gap: 8px;
+    padding-left: 5px;
+  }
+  .search-bar{
+    padding: 13px;
+    font-size: 1.1em;
+    margin-left: -5px;
+  }
+  .icon{
+    width: 25px;
+    height: 25px;
+    gap: 15px;
+  }
+  .p_footer{
+    font-size: 0.8em;
+  }
+  .footer-nav{
+    font-size: 0.8em;
+  }
+  .footer-links{
+    font-size: 0.8em;
+    margin-top: 0;
+  }
+  hr{
+    margin-bottom: 0;
+  }
+  .grid-container{
+    grid-template-columns: repeat(5, 1fr)
+  }
+  #iframe-container .iframe-wrapper {
+    width: 85%; /* Slightly larger width for medium screens */
+    height: 55%; /* Adjust height */
+  }
+
+  #iframe-container iframe {
+    width: 100%; /* Full width for medium screens */
+    height: 100%; /* Full height for medium screens */
+  }
+
+  .close-btn {
+    font-size: 24px; /* Medium close button */
+  }
+}
+
+/* For large screens */
+@media only screen and (min-width: 1001px) {
+  .grid-item .game-title {
+    font-size: 1.1em;
+    margin: 12px 0;
+  }
+  h1{
+    margin-top: 160px;
+  }
+  #iframe-container .iframe-wrapper {
+    width: 80%; /* Default width for large screens */
+    height: 60%; /* Default height for large screens */
+
+  }
+
+  #iframe-container iframe {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+  }
+
+  .close-btn {
+    font-size: 28px; /* Larger close button */
+  }
+}

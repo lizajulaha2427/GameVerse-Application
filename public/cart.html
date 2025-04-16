@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #3dc6df, #ffffff); /* Blue to white gradient */
+    color: #1c1c1c; /* Dark text for better contrast */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    margin-top: 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: transparent;
+    padding: 20px 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(2px);
+    height: 20px;
+}
+
+.logo {
+    width: 90px;
+    height: 80px;
+    margin-top: 25px;
+}
+
+.nav-left {
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+}
+
+.nav-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-right: 50px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    color: #ecebf4;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s;
+    font-size: 1.3em;
+    margin-top: 20px;
+}
+
+.nav-item:hover {
+    color: #3dc6df;
+}
+
+.item-container {
+    display: flex;
+    flex-direction: column;
+    margin: 100px auto;
+    max-width: 1200px;
+    padding: 30px;
+    background-color: aliceblue;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.head {
+    font-weight: bold;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #3dc6df;
+}
+
+.total {
+    margin-bottom: 30px;
+    font-size: 1.4em;
+    color: #b3b3b3;
+}
+
+#totalnum {
+    font-weight: bold;
+    color: #3dc6df;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; /* Space between rows */
+    margin-bottom: 30px;
+}
+
+th, td {
+    padding: 16px;
+    background-color: #e6f7ff;
+    text-align: left;
+    border: 1px solid #36a7c0; /* Border color */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Shadow for table items */
+}
+
+th {
+    font-weight: bold;
+    color: #3dc6df;
+    background-color: #d1f0fc;
+}
+
+img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.generate_qr {
+    padding: 16px;
+    background-color: #3dc6df;
+    color: #1c1c1c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+}
+
+.generate_qr:hover {
+    background-color: #36a7c0;
+}
+
+.footer-bottom {
+    margin-top: auto;
+    background-color: transparent;
+    padding: 20px;
+    font-size: 0.8em;
+    color: #1c1c1c;
+}
+
+.footer-bottom > div {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5px 0;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+.footer-policies {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.footer-policies a {
+    color: #3dc6df;
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+.footer-policies a:hover {
+    text-decoration: underline;
+}
+
+.footer-logos_ {
+    text-align: center;
+    margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+    .item-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .shopping-bag-content {
+        flex: 1;
+        margin-right: 500px;
+    }
+
+    .generate_qr {
+        align-self: flex-end;
+        width: auto;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <img src="logologo.png" alt="Logo" class="logo">
+            <a href="main.html" class="nav-item">Home</a>
+            <a href="#" class="nav-item">About Us</a>
+        </div>
+        <div class="nav-right">
+            <div class="user-info">
+                <a href="profile.html" class="nav-item"><i class="fas fa-user icon"></i></a>
+            </div>
+            <a href="#" class="nav-item">FAQ</a> 
+        </div>
+    </nav>
+
+    <div class="item-container">
+        <div class="shopping-bag-content">
+            <p class="head">Gaming Cart</p>
+            <p class="total"><span id="totalnum">0 items</span> in your cart.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Game</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items"></tbody>
+            </table>
+        </div>
+        <a href="Payment.html" class="generate_qr">COMPLETE PURCHASE</a>
+    </div>
+
+    <div class="footer-bottom">
+        <div>
+            <p>© 2024, GameVerse, Inc. All rights reserved. Epic, Gameverse Games, the Gameverse logo, Fortnite, the Fortnite logo, Unreal, Unreal Engine, the Unreal Engine logo, Unreal Tournament, and the Unreal Tournament logo are trademarks or registered trademarks of Epic Games, Inc. in the United States of America and elsewhere. Other brands or product names are the trademarks of their respective owners.</p>
+            <p>Our websites may contain links to other sites and resources provided by third parties. These links are provided for your convenience only. Epic Games has no control over the contents of those sites or resources, and accepts no responsibility for them or for any loss or damage that may arise from your use of them.</p>
+        </div>
+        <div class="footer-policies">
+            <a href="#">Terms of Service</a> |
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Store Refund Policy</a>
+        </div>
+        <div class="footer-logos_">
+            <img src="logologo.png" alt="GameVerse Logo" width="50">
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+</html>

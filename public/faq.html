@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaming Library FAQ</title>
+</head>
+<link rel="stylesheet" href="faq.css">
+<body>
+
+<h1>Frequently Asked Questions</h1>
+
+<div class="wrapper">
+  
+  <div class="container">
+    <div class="question">
+        How can I find games that are compatible with my device?
+    </div>
+    <div class="answercont">
+      <div class="answer">
+        We provide compatibility details for each game. You can check if a game is available for your platform (PC, Xbox, PlayStation, etc.) on the game’s detail page.
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="question">
+        Do I need a subscription to access the games?
+    </div>
+    <div class="answercont">
+      <div class="answer">
+        Yes, we offer different subscription plans to access our game library. Each plan comes with various perks and access levels, which you can find on our subscription page.
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="question">
+        Can I download games for offline play?
+    </div>
+    <div class="answercont">
+      <div class="answer">
+        Currently, our games are available for online streaming only. However, we are working on a feature to allow offline downloads for certain subscription tiers.
+      </div>
+    </div>
+  </div>
+ 
+  <div class="container">
+    <div class="question">
+        How frequently are new games added?
+    </div>
+    <div class="answercont">
+      <div class="answer">
+        New games are added monthly to keep our library fresh. Our subscribers receive early access to newly added titles as well.
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="question">
+        Is there a limit to how many games I can add to my library?
+    </div>
+    <div class="answercont">
+      <div class="answer">
+        No, you can add as many games as you like to your personal library. However, your ability to play multiple games simultaneously may depend on your subscription tier.
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="question">
+        Are there age restrictions for certain games?
+    </div>
+    <div class="answercont">
+      <div class="answer">
+        Yes, some games have age restrictions based on their content. Please check the game’s detail page for information on age ratings.
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="question">
+        Can I share my account with others?
+    </div>
+    <div class="answercont">
+      <div class="answer">
+        For security reasons, accounts are meant for individual use. Sharing accounts is not permitted under our terms of service.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+    let question = document.querySelectorAll(".question");
+
+question.forEach(question => {
+  question.addEventListener("click", event => {
+    const active = document.querySelector(".question.active");
+    if(active && active !== question ) {
+      active.classList.toggle("active");
+      active.nextElementSibling.style.maxHeight = 0;
+    }
+    question.classList.toggle("active");
+    const answer = question.nextElementSibling;
+    if(question.classList.contains("active")){
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    } else {
+      answer.style.maxHeight = 0;
+    }
+  })
+})
+
+  kofiWidgetOverlay.draw('mohamedghulam', {
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Support me',
+    'floating-chat.donateButton.background-color': '#323842',
+    'floating-chat.donateButton.text-color': '#fff'
+  });
+</script>
+</body>
+</html>

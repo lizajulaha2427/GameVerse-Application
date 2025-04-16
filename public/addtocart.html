@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - GameVerse</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #efefef;
+            color: #000000;
+            min-height: 100vh;
+            padding-bottom: 80px;
+        }
+
+        .item-container {
+            margin-top: 40px;
+            padding: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 15px;
+            background-color: rgb(248, 248, 248);
+        }
+        .head {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #000000;
+            opacity: 1;
+        }
+
+        .total {
+            font-size: 1.1rem;
+            color: #000000;
+            margin-bottom: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 0.5rem;
+        }
+
+        th {
+            background: rgb(212, 235, 249);
+            padding: 1rem;
+            text-align: left;
+            color: #000000;
+            font-weight: 600;
+        }
+
+        td {
+            color: #000000;
+            padding: 1rem;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .cart-item img {
+            width: 140px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 0px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .quantity-btn {
+            background: rgb(0, 0, 0);
+            border: none;
+            color: #ffffff;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quantity-btn:hover {
+            background: rgba(74, 158, 255, 0.4);
+        }
+
+        .remove-btn {
+            background: rgba(255, 53, 42, 0.352);
+            border: none;
+            color: #ff453a;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .remove-btn:hover {
+            background: rgba(255, 69, 58, 0.4);
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 3rem !important;
+        }
+
+        .empty-cart-message {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .empty-cart-message i {
+            font-size: 3rem;
+            color: #4a9eff;
+        }
+
+        .continue-shopping {
+            display: inline-block;
+            background: #4a9eff;
+            color: #ffffff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .continue-shopping:hover {
+            background: #3286e6;
+            transform: translateY(-2px);
+        }
+
+        .generate_qr {
+            display: inline-block;
+            background: #c1deff;
+            color: #000000;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .generate_qr:hover {
+            background: #3286e6;
+            transform: translateY(-2px);
+        }
+
+        .totals-row td {
+            background: transparent;
+        }
+
+        .totals-row.total td {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #4a9eff;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            background: rgba(74, 158, 255, 0.9);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            animation: slideIn 0.3s ease-out;
+            z-index: 1001;
+        }
+
+        .notification.error {
+            background: rgba(255, 69, 58, 0.9);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .notification.fade-out {
+            animation: fadeOut 0.3s ease-in forwards;
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="item-container">
+        <div class="shopping-bag-content">
+            <p class="head">Your Cart</p>
+            <p class="total"><span id="totalnum">0 items</span> in your cart</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Game</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <!-- Cart items will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+        <button onclick="window.location.href='otp.html'" class="generate_qr">COMPLETE PURCHASE</button>
+    </div>
+
+    <script src="addtocart.js"></script>
+</body>
+</html>

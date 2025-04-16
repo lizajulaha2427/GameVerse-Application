@@ -1,0 +1,208 @@
+    body {
+        background-color: black;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .image-container {
+        position: relative;
+        width: 100%; /* Adjusted to be responsive */
+        margin-top: 7%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .image-container img {
+        
+        width: 100%;
+        height: auto;
+        opacity: 0.5;
+    }
+
+    .text-overlay {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        background-color: none; /* Semi-transparent background */
+        padding: 10px 20px;
+        border-radius: 8px;
+    }
+    .form-container {
+        margin-left: 17%;
+        width: 65%;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        padding: 20px;
+    }
+
+    .form-header {
+        padding: 20px;
+        text-align: left;
+        color: #f5f5f5;
+    }
+
+    .form-header h2 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    .form-header p {
+        font-size: 1em;
+        color: #ffffff;
+    }
+
+    .form-body {
+        padding: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #f5f5f5;
+    }
+
+    .form-group input[type="text"], 
+    .form-group input[type="email"], 
+    .form-group input[type="tel"],
+    .form-group select {
+        width: 98%;
+        height: 30px;
+        padding: 10px;
+        font-size: 1em;
+        border: 1px solid #333;
+        border-radius: 4px;
+        background-color: #8fbaf2e6;
+        backdrop-filter: blur(10px);
+        opacity: 1;
+        color: #000000;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .form-group input:focus {
+        background-color: #ffd4d4d9;
+        color: #000000;
+    }
+    .form-group select:focus {
+        background-color: #ffd4d4d9;
+        color: #000000;
+    }
+
+
+    .form-group input::placeholder {
+        color: #000000;
+        font-weight: bold;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+        border-color: #6200ea;
+        outline: none;
+    }
+
+    .form-row {
+        display: flex;
+        gap: 10px;
+    }
+
+    .form-row .form-group {
+        flex: 1;
+    }
+    /* General Footer Styling */
+    .footer {
+        background-color: rgba(3, 3, 3, 0.82);
+        color: #fff;
+        padding: 40px 20px;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Footer Top Section - Social Icons */
+    .footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+
+    .social-icons a {
+        display: inline-block;
+        width: 40px;  /* Set equal width */
+        height: 40px; /* Set equal height */
+        margin: 0 10px;
+    }
+
+    .social-icons a img {
+        width: 100%;  /* Fit image within the container */
+        height: 100%; /* Maintain aspect ratio inside container */
+        object-fit: contain;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .social-icons a img:hover {
+        transform: scale(1.2);
+    }
+
+    /* Footer Bottom Section - Text, Policies, and Logos */
+    .footer-bottom {
+        border-top: 1px solid #444;
+        padding-top: 20px;
+        text-align: left;
+    }
+
+    /* Policies Links */
+    .footer-policies {
+        margin: 20px 0;
+    }
+
+    .footer-policies a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .footer-policies a:hover {
+        text-decoration: underline;
+    }
+
+    /* Logos Section */
+    .footer-logos {
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .footer-logos img {
+        width: 50px;
+        height: auto;
+        margin-top: 10px;
+    }
+
+    .footer-logos_ img {
+        width: 80px;
+        height: auto;
+        margin-top: 0px;
+    }
+
+    /* Mobile Responsive Design */
+    @media (max-width: 600px) {
+        .footer-top, .footer-bottom {
+            text-align: center;
+        }
+
+        .footer-top {
+            flex-direction: column;
+        }
+
+        .footer-logos img {
+            margin: 10px 0;
+        }
+    }

@@ -1,0 +1,1515 @@
+body {
+  background-color: black;
+  background-size: auto;
+  color: white; 
+  overflow-x: hidden;
+}
+
+#play1{
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  border-radius: 0.75rem;
+  width: 155px;
+  height: 50px;
+  margin-right: 10px;
+}
+#play{
+  background-color: white;
+  font-size: 15px;
+  border-radius: 0.75rem;
+  width: 155px;
+  height: 50px;
+  margin-right: 10px;
+}
+.buy{
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  color: white;
+  font-size: 15px;
+  border-radius: 0.75rem;
+  width: 155px;
+  height: 50px;
+}
+
+
+.buy {
+  pointer-events: auto;
+}
+
+.buy:hover {
+  background-color: rgba(128, 128, 128, 0.2);
+  backdrop-filter: blur(20px);
+}
+
+.offthegrid{
+  margin-left: 10%;
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.7);
+}
+
+
+nav {
+  margin-top: 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: transparent;
+  padding: 20px 30px;
+  position: fixed;
+  top: 0;
+  width: 100%; 
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+  height: 20px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+}
+
+.nav-left {
+  margin-left: 0;
+  display: flex;
+  align-items: center;
+  margin-right: 0px;
+  gap: 30px;
+  position: relative;
+}
+
+.nav-item {
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+.nav-item:hover {
+  color: #4568f7;
+}
+
+#iframe-container {
+  display: none; 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%;
+  height: 100%; 
+  background: rgba(0, 0, 0, 0.7); 
+  z-index: 100; 
+  overflow: hidden; 
+}
+
+#iframe-container .iframe-wrapper {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  width: 80%; 
+  height: 60%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+  position: relative;
+}
+
+#iframe-container iframe {
+  width: 100%;
+  height: 100%; 
+  border: none; 
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 200;
+}
+
+.close-btn:hover {
+  color: rgb(51, 50, 50);
+}
+
+.nav-middle {
+  margin-left: 0px; 
+  margin-right: 0px;
+  flex-grow: 0.9;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar {
+  width: 70%;
+  padding: 10px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 8px;
+  background-color: #181818;
+  color: #ccc8e7;
+  margin-top: 20px;
+}
+
+.nav-right {
+  margin-left: 0px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-right: 50px;
+}
+
+.nav-item {
+  color: #ecebf4;
+  text-decoration: none;
+  font-size: 1.3em;
+  gap: 45px;
+}
+
+.icon {
+  width: 38px;
+  height: 38px;
+  gap: 12px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+.slide1{
+  top: 78%; 
+  margin-left: 480px; 
+  text-align: center;
+  left:15%
+}
+.slide1 span{
+  color: white;
+  font-size: large; 
+  font-family: 'Times New Roman', Times, serif;
+}
+.slide2{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight:200;
+  top: 55%;
+  left: 15%;
+}
+.slide2 span{
+  font-size: large; 
+  font-family: 'Times New Roman', Times, serif;
+}
+.slide3{
+  color: black; 
+  top: 57%; 
+  left: 15%;
+  margin-left: 90px;
+}
+.slide3 span{
+  color: #000;
+  font-size: large; font-family: 'Times New Roman', Times, serif;
+}
+.slide4{
+  top: 70%; margin-left: 120px; left: 15%;
+}
+.slide4 span{
+  font-size: large; font-family: 'Times New Roman', Times, serif;
+}
+.slide5{
+  top: 65%; margin-left: 5%;left: 15%;
+}
+.slide5 span{
+  font-size: large; font-family: 'Times New Roman', Times, serif; font-weight: bolder; backdrop-filter: blur(2px);
+}
+.slide6{
+  color: black; backdrop-filter: blur(2px); font-size: 20px; top: 60%; margin-left: 90px; left: 15%;
+}
+.slide6 span{
+  font-size: large; font-family: 'Times New Roman', Times, serif; font-size: 22px; color: #000;
+}
+.slide7{
+  backdrop-filter: blur(2px); top: 65%; margin-left: 60px; left: 15%;
+}
+.slide7 span{
+  font-size: large; font-family: 'Times New Roman', Times, serif;
+}
+.slide8{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight:200; top:48%; left: 23%; 
+}
+.slide8 h1{
+  font-size: 60px; font-weight: 600; font-family:Verdana, Geneva, Tahoma, sans-serif; color: rgba(251, 29, 66, 0.973); 
+}
+.slide8 span{
+  font-size: 26px; font-family: 'Times New Roman', Times, serif; color: black; font-weight: bold;
+}
+
+.container {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+  margin: auto;
+  padding-top:15px;
+  margin-top: 1px;
+  max-width: 100%; 
+}
+
+.slider-wrapper {
+  
+  position: relative;
+  max-height: 32rem;
+  max-width: 88rem;
+  margin: auto;
+}
+
+.slider {
+  display: flex;
+  aspect-ratio: 24 / 10.5;
+  overflow-x: auto; /* Keep this for scrolling functionality */
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+  border-radius: 0.1px;
+  position: relative;
+}
+.image-container {
+  flex: 1 0 100%;
+  position: relative;
+  margin: auto;
+}
+.image-container img{
+  max-height: 32rem;
+  max-width: 87rem;
+  display: flex;
+  aspect-ratio: 24 / 10;
+  overflow-x: auto; /* Keep this for scrolling functionality */
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+  border-radius: 1.5rem;
+  position: relative;
+  margin: auto;
+  width: 100%; /* Make the image fill the entire width */
+  height: 100%; /* Fill the height as well */
+  object-fit: cover;
+}
+
+
+
+.image-container figcaption {
+  position: absolute;
+  transform: translate(-50%, -50%); /* Perfect centering */
+  color: white;
+  font-size: 24px;
+  font-weight: bold;/* Ensures the text doesn't block interactions with the image */
+}
+
+/* Hide scrollbar for all browsers */
+.slider::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar for webkit browsers */
+}
+
+.slider {
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.slider img {
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  object-fit: fill;
+}
+
+.slider-nav {
+  display: flex;
+  justify-content: center; /* Center dots */
+  margin-top: 0px;
+  position: relative; /* Position it relative to the slider */
+  bottom: 35px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px; /* Dot size */
+  height: 10px;
+  background-color: #ccc; /* Inactive dot color */
+  border-radius: 50%; /* Makes dots circular */
+  margin: 0 5px; /* Space between dots */
+  transition: background-color 0.3s ease;
+}
+
+.dot:hover,
+.dot:focus {
+  background-color: #000; /* Active dot color */
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white; /* White color for arrows */
+  font-size: 3rem; /* Adjust size as needed */
+  cursor: pointer;
+  z-index: 2; /* Place above the images */
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.3s ease; /* Smooth transition for visibility */
+  background: none; /* Remove background */
+  border: none; /* Remove border */
+  padding: 0; /* Remove padding */
+}
+.left-arrow {
+  left: -40px; /* Position left outside of the slider */
+}
+.right-arrow {
+  right: -40px; /* Position right outside of the slider */
+}
+
+.slider-wrapper:hover .arrow {
+  opacity: 1; /* Show arrows when hovering over the slider */
+}
+.game-section {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.game-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.game-container {
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+  width: 98%; /* Adjust as needed */
+}
+.game-item {
+  position: relative;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+}
+.game-item img {
+  object-fit: cover; /* Ensures images cover the area without stretching */
+  border-radius: 10px;
+}
+.game-item img {
+  transition: all 0.3s ease; /* Smooth transition for blur effect */
+}
+
+/* Blurring the background on hover */
+.game-item:hover img {
+  filter: blur(5px) ; /* Adjust blur level as needed */
+  transform: scale(1.03); /* Optional: slight zoom effect */
+}
+
+.game-name {
+  position: absolute;
+  bottom: 40%; /* Stick the name at the bottom of the game box */
+  color: rgb(0, 0, 0);
+  backdrop-filter: blur(4px);
+  font-weight: 900;
+  font-size: 40px;
+  text-align: center;
+  padding: 5px 0; /* Space inside the name container */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+/* Show the game name when hovering */
+.game-item:hover .game-name {
+  opacity: 1;
+}
+.game-name1 {
+  position: absolute;
+  bottom: 40%; /* Stick the name at the bottom of the game box */
+  color: rgb(255, 255, 255);
+  backdrop-filter: blur(4px);
+  font-weight: 900;
+  font-size: 28px;
+  text-align: center;
+  padding: 5px 0; /* Space inside the name container */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+.featured{
+  width: 400px; height: 200px;
+}
+.free{
+  height: 180px; width: 350px;
+}
+.original{
+  height: 360px; width: 260px;
+}
+/* Show the game name when hovering */
+.game-item:hover .game-name1 {
+  opacity: 1;
+}
+.arroww {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+.left {
+  left: 10px;
+  background: none;
+}
+
+.right {
+  right: 10px;
+  background: none;
+}
+.multiplayer{
+  height: 16rem;
+  width: 86rem;
+  background-color: rgb(238,206,191);
+  align-self: center;
+  border-radius: 20px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+  margin: auto;
+  margin-top: 40px;
+  display: flex;
+}
+.multiplayer img{
+  height: 14rem; width: 20rem; margin-left: 50px; margin-right: 50px;
+}
+.h1multi{
+  color: black; margin-top: 90px; font-size: 45px; margin-left: 30px;
+}
+.multi{
+  width: 8rem; 
+  height: 2.25rem;  
+  border-radius: 18px; 
+  border: none; 
+  font-weight: bold; 
+  background-color: rgb(244 132 112);
+}
+.multidiv{
+  width: 20rem; height: 14rem; background-color: rgb(241 225 217); margin-top: 30px; margin-left: 30px; border-radius: 10px; text-align: center;
+}
+.multi:hover{
+  background-color: rgb(184,115,120);
+}
+.h2multi{
+  color: black; margin-top: 35px; font-weight: lighter;
+}
+.grid-wrapper-sXv {
+  background-color: #030303;
+  font-family: Arial, sans-serif;
+  color: white;
+  display: flex;
+  margin-top: 50px;
+  gap: 30px;
+  justify-content: center;
+}
+
+.category-card-LL8 {
+  background-color:transparent;
+  padding: 20px;
+  border-radius: 8px;
+  width: 380px;
+}
+
+.category-card-LL8 h1 {
+  margin-left: 40px;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.category-card-LL8 ul {
+  list-style: none;
+}
+
+.category-card-LL8 li {
+  display: flex;
+  align-items:center;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color:transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  overflow-x: hidden;
+}
+
+.category-card-LL8 li:hover {
+  background-color: #2b2b2b;
+  transform: scale(1.02);
+}
+
+.category-card-LL8 li img {
+  width: 70px;
+  height: 80px;
+  border-radius: 5px;
+  margin-right: 10px;
+
+}
+.image1{
+  filter: blur(2px);
+}
+
+.category-card-LL8 span {
+  font-weight: bold;
+  color: #fff;
+}
+
+.category-card-LL8 p {
+  margin-left: auto;
+  color: #b5b5b5;
+}
+
+.vertical-divider {
+  width: 2px;
+  background-color: #444;
+  height: auto;
+  margin: 0 20px;
+}
+
+.wishlist-icon {
+position: relative;
+display: flex;
+margin-left: 60px;
+cursor: pointer;
+
+}
+
+.plus-sign {
+font-size: 24px;
+color: #fff;
+transition: transform 0.2s ease;
+
+}
+
+.wishlist-icon:hover .plus-sign {
+transform: scale(1.2);
+}
+
+.wishlist-tooltip {
+visibility: hidden;
+width: 120px;
+background-color: #333;
+color: #fff;
+text-align: center;
+border-radius: 6px;
+padding: 5px;
+position: absolute;
+position: absolute; /* Position it relative to the wishlist icon */
+left: 50%; /* Center it horizontally */
+transform: translateX(-100%);
+top: -20px;
+z-index: 1;
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+
+.wishlist-icon:hover .wishlist-tooltip {
+visibility: visible;
+opacity: 1;
+}
+.game-info {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column; /* Forces the name and price to stack vertically */
+  flex-grow: 1;
+}
+
+.category-card-LL8 .price {
+  font-weight: bold;
+  color: #fff;
+  margin-top: 5px;
+}
+.premiumplan{
+  background-color: #2b2b2b;
+  width: 90%;
+  height: 35rem;
+  margin-left: 5%;
+  margin-top: 4rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.freee{
+  display: flex;
+  flex-direction:row;
+}
+.free1{
+  display: flex;
+  flex-direction: column;
+}
+.freee:hover img{
+  filter: blur(1px) ; /* Adjust blur level as needed */
+  transform: scale(1.03);
+}
+.premium{
+  height: 20rem;
+  width: 86rem;
+  background-color: #bfe7ff;
+  align-self: center;
+  border-radius: 20px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+  margin: auto;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+}
+.gameplan{
+  display: flex;
+  flex-direction: column;
+}
+.premiumm{
+  color: white;
+  width: 8rem; 
+  height: 2.25rem;  
+  border-radius: 18px; 
+  border: none; 
+  font-weight: bold; 
+  background-color: black;
+}
+/* General Footer Styling */
+.footer {
+  background-color: rgba(3, 3, 3, 0.82);
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Footer Top Section - Social Icons */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 40px;  /* Set equal width */
+  height: 40px; /* Set equal height */
+  margin: 0 10px;
+}
+
+.social-icons a img {
+  width: 100%;  /* Fit image within the container */
+  height: 100%; /* Maintain aspect ratio inside container */
+  object-fit: contain;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.2);
+}
+
+/* Footer Bottom Section - Text, Policies, and Logos */
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding-top: 20px;
+  text-align: left;
+}
+
+/* Policies Links */
+.footer-policies {
+  margin: 20px 0;
+}
+
+.footer-policies a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-policies a:hover {
+  text-decoration: underline;
+}
+
+/* Logos Section */
+.footer-logos {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.footer-logos img {
+  width: 50px;
+  height: auto;
+  margin-top: 10px;
+}
+
+.footer-logos_ img {
+  width: 80px;
+  height: auto;
+  margin-top: 0px;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 600px) {
+  .footer-top, .footer-bottom {
+      text-align: center;
+  }
+
+  .footer-top {
+      flex-direction: column;
+  }
+
+  .footer-logos img {
+      margin: 10px 0;
+  }
+}
+/* For small screens*/
+@media only screen and (max-width: 600px) {
+  .body{
+    overflow-x: hidden;
+    max-width: 600px;
+  }
+  .logo{
+    width: 12px;
+    height: 12px;
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+  .nav-middle{
+    flex-grow: 0.4;
+    margin-right: 0px;
+  }
+  .nav-right{
+    margin-left: 0px;
+    margin-right: 60px;
+    gap: 10px;
+  }
+  .nav-item{
+    font-size: 0.9em;
+    gap: 1px;
+    padding-left: 5px;
+  }
+  .search-bar{
+    padding: 13px;
+    font-size: 0.8em;
+    margin-left: -10px;
+
+  }
+  .icon{
+    width: 12px;
+    height: 12px;
+  }
+  .nav-left{
+    gap: 6px;
+  }
+  #iframe-container .iframe-wrapper {
+    width: 80%; /* Adjust width for smaller screens */
+    height: 42%; /* Adjust height for smaller screens */
+  }
+
+  #iframe-container iframe {
+    width: 100%; /* Ensure the iframe still takes full width */
+    height: 100%; /* Ensure the iframe still takes full height */
+  }
+
+  .close-btn {
+    font-size: 20px; /* Smaller close button for mobile */
+  }
+    .container {
+      padding-left: 40px;
+      padding-right: 40px;
+      padding-bottom: 0.5rem;
+      margin-top: 40px;
+    }
+  
+    .slider-wrapper {
+      max-height: 20rem;
+      max-width: 100%;
+    }
+  
+    .slider {
+      aspect-ratio: 16 / 9; /* Adjust aspect ratio for smaller screens */
+    }
+  
+    .image-container {
+      flex: 1 0 100%;
+      max-width: 100%; /* Ensure image takes full width */
+      max-height: 20rem; /* Reduce height for smaller screens */
+    }
+  
+    .image-container img {
+      max-height: 20rem;
+      width: 100%; /* Make sure the image takes the full width of its container */
+      height: 100%;
+     
+      object-fit: cover; /* Maintain the aspect ratio and cover the area */
+    }
+  
+    .image-container figcaption {
+      font-size: 4px; /* Reduce font size for smaller screens */
+      top: 40%; /* Adjust caption position */
+    }
+    .slide1{
+      margin-left: 35%;
+      margin-top: 19%;
+      text-align: center;
+    }
+    .slide2{
+      text-align: left;
+      left: 28%;
+      margin-top: 4%;
+    }
+    .slide3{
+      margin-top:6%;
+      left: 8%;
+    }
+    .slide4{
+      margin-top: 12%;
+      margin-left: 13%;
+    }
+    .slide5{
+      margin-top: 10%;
+    }
+    .slide6{
+      margin-top: 10%; 
+      margin-left: 15%;
+    }
+    .slide7{
+      margin-top: 10%;
+    }
+    .slide1,
+    .slide2,
+    .slide3,
+    .slide4,
+    .slide5,
+    .slide6,
+    .slide7,
+    .slide8 {
+      top: 10%; /* Adjust position of text on slides */
+    }
+  
+    .slide1 span, 
+    .slide2 span, 
+    .slide3 span, 
+    .slide4 span, 
+    .slide5 span, 
+    .slide6 span, 
+    .slide7 span, 
+    .slide8 span {
+      font-size: 7px; /* Smaller font for slide text */
+    }
+  
+    .slide8 h1 {
+      font-size: 20px; /* Adjust heading size for smaller screens */
+    }
+    .buy{
+      width: 60px; /* Adjust button size */
+      height: 17px;
+      font-size: 6px; /* Smaller font for buttons */
+      margin-right: 5px;
+    }
+    #play, #play1 {
+      width: 48px; /* Adjust button size */
+      height: 17px;
+      font-size: 6px; /* Smaller font for buttons */
+      margin-right: 5px;
+    }
+  
+    .left-arrow, .right-arrow {
+      font-size: 2rem; /* Reduce size of navigation arrows */
+    }
+    .left-arrow {
+      left: -20px; /* Position left outside of the slider */
+    }
+    .right-arrow {
+      right: -20px; /* Position right outside of the slider */
+    }
+  
+    .slider-nav {
+      bottom: 15px; /* Adjust position of navigation dots */
+    }
+  
+    .dot {
+      width: 8px; /* Reduce dot size */
+      height: 8px;
+  }
+  .game-section{
+    margin-top: 0px;
+  }
+  .game-section h2 {
+    font-size: 1.5rem;
+    margin-left: 10px;
+  }
+
+  .game-container {
+    flex-direction: row; /* Stack game items vertically */
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  .game-item {
+    margin: 10px 0;
+  }
+
+  .game-item img {
+    width: 100%;
+  }
+  .featured{
+    height: 100px;
+    max-width: 212px;
+    min-width: 180px;
+    margin-right: 3px;
+  }
+  .free{
+    height: 100px;
+    max-width: 212px;
+    min-width: 180px;
+    margin-right: 3px;
+  }
+  .original{
+    max-width: 130px;
+    min-width: 110px;
+    height: 150px;
+  }
+  .game-name, .game-name1 {
+    font-size: 10px;
+    bottom: 30%; /* Adjust position for smaller screens */
+  }
+
+  .arroww {
+    font-size: 1.5rem;
+    padding: 5px;
+  }
+
+  .multiplayer {
+    flex-direction: row;
+    width: 90%;
+    height: 60%;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 1rem;
+  }
+
+  .multiplayer div {
+    width: 20%;
+    margin: 10px 0;
+    margin-right: 10px;
+    height: auto;
+  }
+  .multiplayer img{
+    width: 150px;
+    height: 10px;
+    margin: 10px 0;
+    height: auto;
+  }
+  .h1multi{
+    font-size: 100%;
+  }
+
+  .multi {
+    width: 80px;
+    font-size: 9px;
+    font-weight: bolder;
+  }
+
+  h1 {
+    font-size: 100%;
+    text-align: center;
+  }
+  .h2multi{
+    font-size: 100%;
+  }
+  .category-card-LL8 {
+    background-color:transparent;
+    padding: 0;
+    border-radius: 8px;
+    width: 110px;
+    margin-left: -40px;
+    padding-left: 10px;
+  }
+  
+  .category-card-LL8 h1 {
+    margin-left: 40px;
+    font-size: 18px;
+    margin-bottom: 22px;
+    color: #fff;
+  }
+  
+  .category-card-LL8 ul {
+    list-style: none;
+  }
+  
+  .category-card-LL8 li {
+    display: flex;
+    align-items:center;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color:transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    overflow-x: hidden;
+  }
+  
+  .category-card-LL8 li:hover {
+    background-color: #2b2b2b;
+    transform: scale(1.02);
+  }
+  
+  .category-card-LL8 li img {
+    width: 70px;
+    height: 80px;
+    border-radius: 5px;
+    margin-right: 10px;
+  
+  }
+  .image1{
+    filter: blur(2px);
+  }
+  
+  .category-card-LL8 span {
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .category-card-LL8 p {
+    margin-left: auto;
+    color: #b5b5b5;
+  }
+  .premiumplan{
+    background-color: #2b2b2b;
+    width: 30%;
+    height: 10rem;
+    margin-left: 0.2%;
+    margin-top: 2rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* For medium screens*/
+@media only screen and (min-width: 601px) and (max-width: 1000px) {
+  .logo{
+    width: 25px;
+    height: 25px;
+    margin-left: 1px;
+    margin-right: 5px;
+  }
+  .nav-middle{
+    flex-grow: 0.7;
+    margin-right: 0px;
+  }
+  .nav-right{
+    margin-left: 0px;
+    margin-right: 50px;
+    gap: 20px;
+  }
+  .nav-item{
+    font-size: 1.2em;
+    gap: 8px;
+    padding-left: 5px;
+  }
+  .search-bar{
+    padding: 13px;
+    font-size: 1.1em;
+    margin-left: -5px;
+  }
+  .icon{
+    width: 25px;
+    height: 25px;
+    gap: 15px;
+  }
+  #iframe-container .iframe-wrapper {
+    width: 85%; /* Slightly larger width for medium screens */
+    height: 55%; /* Adjust height */
+  }
+
+  #iframe-container iframe {
+    width: 100%; /* Full width for medium screens */
+    height: 100%; /* Full height for medium screens */
+  }
+
+  .close-btn {
+    font-size: 24px; /* Medium close button */
+  }
+  .container {
+    padding-left: 20px; /* Adjust padding */
+    padding-right: 20px;
+    padding-bottom: 1rem;
+    margin-top: 25px;
+  }
+
+  .slider-wrapper {
+    min-height: 15rem;
+    max-height: 30rem;
+    max-width: 95%;
+  }
+  .image-container {
+    flex: 1 0 100%;
+    max-height: 30rem; /* Increase height for larger screens */
+    max-width: 100%;
+  }
+  .slider {
+    aspect-ratio: 16 / 9; /* Adjust aspect ratio for smaller screens */
+  }
+
+  .image-container img {
+    min-height: 15rem;
+    max-height: 30rem; /* Increase max height for images */
+    width: 100%; /* Make sure the image takes the full width of its container */
+    height: 100%;
+  }
+
+  .image-container figcaption {
+    font-size: 4px; /* Increase font size for captions */
+    top: 45%; /* Adjust position */
+  }
+  .slide1{
+    margin-left: 35%;
+    margin-top: 16%;
+    text-align: center;
+  }
+  .slide2{
+    text-align: left;
+    left: 28%;
+    margin-top: 5%;
+  }
+  .slide2 h1{
+    font-size: 15px;
+  }
+  .slide3{
+    margin-top:6%;
+    left: 15%;
+  }
+  .slide4{
+    margin-top: 12%;
+    margin-left: 17%;
+  }
+  .slide5{
+    margin-top: 10%;
+  }
+  .slide6{
+    margin-top: 10%; 
+    margin-left: 15%;
+  }
+  .slide7{
+    margin-top: 10%;
+  }
+  .slide1,
+  .slide2,
+  .slide3,
+  .slide4,
+  .slide5,
+  .slide6,
+  .slide7,
+  .slide8 {
+    top: 10%; /* Adjust position of text on slides */
+  }
+
+  .slide1 span,
+  .slide2 span,
+  .slide3 span,
+  .slide4 span,
+  .slide5 span,
+  .slide6 span,
+  .slide7 span,
+  .slide8 span {
+    font-size: clamp(10px, 1.60vw, 25px); /* Slightly larger font for slide text */
+  }
+
+  .slide8 h1 {
+    font-size: 25px; /* Increase heading size */
+  }
+
+  .buy {
+    width: 90px; /* Adjust button size */
+    height: 25px;
+    font-size: 10px; /* Larger font for buttons */
+    border-radius: 6px;
+  }
+
+  #play,
+  #play1 {
+    width: 80px; /* Adjust button size */
+    height: 25px;
+    font-size: 10px; /* Larger font for buttons */
+    border-radius: 6px;
+  }
+
+  .left-arrow,
+  .right-arrow {
+    font-size: 2.5rem; /* Increase size of navigation arrows */
+  }
+  
+  .slider-nav {
+    bottom: 35px; /* Adjust position of navigation dots */
+  }
+
+  .dot {
+    width: 8px; /* Increase dot size */
+    height: 8px;
+  }
+  .game-section{
+    margin-top: 0px;
+  }
+  .game-section h2 {
+    font-size: 1.5rem;
+    margin-left: 10px;
+  }
+
+  .game-container {
+    flex-direction: row; /* Stack game items vertically */
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  .game-item {
+    margin: 10px 0;
+  }
+
+  .game-item img {
+    width: 100%;
+  }
+  .featured{
+    max-width: 280px;
+    min-width: 270px;
+    margin-right: 3px;
+    height: 180px;
+  }
+  .free{
+    max-width: 280px;
+    min-width: 270px;
+    margin-right: 3px;
+    height: 180px;
+  }
+  .original{
+    max-width: 160px;
+    min-width: 150px;
+    margin-right: 6px;
+    height: 200px;
+  }
+  .game-name, .game-name1 {
+    font-size: 20px;
+    bottom: 40%; /* Adjust position for smaller screens */
+  }
+
+  .arroww {
+    font-size: 1.5rem;
+    padding: 5px;
+  }
+  .multiplayer {
+    flex-direction: row;
+    width: 90%;
+    height: 16rem;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 1rem;
+    margin: auto;
+  }
+
+  .multiplayer div {
+    width: 20%;
+    margin: 10px 0;
+    margin-right: 10px;
+    height: auto;
+  }
+  .multiplayer img{
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 150px;
+    height: 10px;
+    height: auto;
+  }
+  .h1multi{
+    font-size: 40px;
+    align-items: center;
+  }
+
+  .multi {
+    width: 80px;
+    font-size: 9px;
+    font-weight: bolder;
+  }
+
+  h1 {
+    font-size: 100%;
+    text-align: center;
+  }
+  .h2multi{
+    font-size: 100%;
+  }
+
+}
+
+/* For large screens */
+@media only screen and (min-width: 1001px) {
+  
+  #iframe-container .iframe-wrapper {
+    width: 80%; /* Default width for large screens */
+    height: 60%; /* Default height for large screens */
+
+  }
+
+  #iframe-container iframe {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+  }
+
+  .close-btn {
+    font-size: 28px; /* Larger close button */
+  }
+  .multiplayer{
+    width: 90%;
+  }
+  
+}
+@media only screen and (min-width: 1001px) and (max-width: 1310px){
+  
+  .container {
+    padding-left: 20px; /* Adjust padding */
+    padding-right: 20px;
+    padding-bottom: 1rem;
+    margin-top: 25px;
+  }
+
+  .slider-wrapper {
+    min-height: 15rem;
+    max-height: 30rem;
+    max-width: 95%;
+  }
+  .image-container {
+    flex: 1 0 100%;
+    max-height: 30rem; /* Increase height for larger screens */
+    max-width: 100%;
+  }
+  .slider {
+    aspect-ratio: 16 / 9; /* Adjust aspect ratio for smaller screens */
+  }
+
+  .image-container img {
+    min-height: 15rem;
+    max-height: 30rem; /* Increase max height for images */
+    width: 100%; /* Make sure the image takes the full width of its container */
+    height: 100%;
+  }
+
+  .image-container figcaption {
+    font-size: 4px; /* Increase font size for captions */
+    top: 45%; /* Adjust position */
+  }
+  .slide1{
+    margin-left: 35%;
+    margin-top: 16%;
+    text-align: center;
+  }
+  .slide2{
+    text-align: left;
+    left: 28%;
+    margin-top: 5%;
+  }
+  .slide2 h1{
+    font-size: 15px;
+  }
+  .slide3{
+    margin-top:6%;
+    left: 15%;
+  }
+  .slide4{
+    margin-top: 12%;
+    margin-left: 17%;
+  }
+  .slide5{
+    margin-top: 10%;
+  }
+  .slide6{
+    margin-top: 10%; 
+    margin-left: 15%;
+  }
+  .slide7{
+    margin-top: 10%;
+  }
+  .slide1,
+  .slide2,
+  .slide3,
+  .slide4,
+  .slide5,
+  .slide6,
+  .slide7,
+  .slide8 {
+    top: 10%; /* Adjust position of text on slides */
+  }
+
+  .slide1 span,
+  .slide2 span,
+  .slide3 span,
+  .slide4 span,
+  .slide5 span,
+  .slide6 span,
+  .slide7 span,
+  .slide8 span {
+    font-size: clamp(10px, 1.60vw, 25px); /* Slightly larger font for slide text */
+  }
+
+  .slide8 h1 {
+    font-size: 25px; /* Increase heading size */
+  }
+
+  .buy {
+    width: 90px; /* Adjust button size */
+    height: 25px;
+    font-size: 10px; /* Larger font for buttons */
+    border-radius: 6px;
+  }
+
+  #play,
+  #play1 {
+    width: 80px; /* Adjust button size */
+    height: 25px;
+    font-size: 10px; /* Larger font for buttons */
+    border-radius: 6px;
+  }
+
+  .left-arrow,
+  .right-arrow {
+    font-size: 2.5rem; /* Increase size of navigation arrows */
+  }
+  
+  .slider-nav {
+    bottom: 35px; /* Adjust position of navigation dots */
+  }
+
+  .dot {
+    width: 8px; /* Increase dot size */
+    height: 8px;
+  }
+  .multiplayer img{
+    margin-right: 0%;
+  }
+  .multiplayer div{
+    margin-left: 0%;
+    margin-right: 2%;
+    width: 20%;
+  }
+  .h2multi{
+    font-size: 100%;
+  }
+}

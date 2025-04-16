@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text on Image</title>
+    <link rel="stylesheet" href="registration.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    
+    
+    <!-- Full-screen Iframe Container -->
+    <div class="image-container">
+        <img src="register.jpeg" alt="Background Image" height="550px">
+        <div class="text-overlay"> <p style="font-size: 30px;">Join GameVerse <br> <br><span style="font-size: 60px; font-weight: lighter;">Careers at GameVerse</span></p></div>
+    </div>
+<form onsubmit="return confirmSubmission()">
+    <div class="form-container">
+        <h1>Registration Form</h1>
+        <div class="form-body">
+            <div class="form-group">
+                <label>Full Name *</label>
+                <div class="form-row">
+                    <input type="text" placeholder="First Name" required>
+                    <input type="text" placeholder="Last Name" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Address *</label>
+                <input type="text" placeholder="Street Address" required>
+                <input type="text" placeholder="Street Address Line 2">
+                <div class="form-row">
+                    <input type="text" placeholder="City" required>
+                    <input type="text" placeholder="State / Province" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" placeholder="Postal / Zip Code" required>
+                    <select style="height: 50px;">
+                        <option value="">Country</option>
+                        <option value="us">United States</option>
+                        <option value="ca">Canada</option>
+                        <option value="ca">India</option>
+                        <!-- Add other countries as options -->
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Phone Number *</label>
+                    <input style="width: 95%;" type="tel" placeholder="(000) 000-0000" required>
+                </div>
+                <div class="form-group">
+                    <label>E-mail *</label>
+                    <input style="width: 96%;" type="email" placeholder="ex: myname@example.com" required>
+                </div>
+            </div>
+            
+            <!-- Submit Button -->
+            <div class="form-group" style="text-align: center; margin-top: 20px;">
+                <button onsubmit="alert('Submitted Successfully!')" type="submit" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+    
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="social-icons">
+                <a href="#" aria-label="Instagram">
+                    <img src="https://static.vecteezy.com/system/resources/previews/018/930/413/original/instagram-logo-instagram-icon-transparent-free-png.png" 
+                    alt="Instagram Logo">
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <img src="https://www.teahub.io/photos/full/11-115962_facebook-logo-png-transparent-background-facebook-png.png" 
+                    alt="Twitter Logo" >
+                </a>
+                <a href="#" aria-label="YouTube">
+                    <img src="https://static.vecteezy.com/system/resources/previews/018/930/575/original/youtube-logo-youtube-icon-transparent-free-png.png" 
+                    alt="YouTube Logo">
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <section>
+                <p>© 2024, GameVerse, Inc. All rights reserved. Epic, Gameverse Games, the Gameverse logo, Fortnite, 
+                the Fortnite logo, Unreal, Unreal Engine, the Unreal Engine logo, Unreal Tournament, and the Unreal Tournament 
+                logo are trademarks or registered trademarks of Epic Games, Inc. in the United States of America and elsewhere. 
+                Other brands or product names are the trademarks of their respective owners.</p>
+
+                <p>Our websites may contain links to other sites and resources provided by third parties. These links are provided 
+                for your convenience only. Epic Games has no control over the contents of those sites or resources, and accepts no 
+                responsibility for them or for any loss or damage that may arise from your use of them.</p>
+            </section>
+
+            <div class="footer-policies">
+                <a href="#">Terms of Service</a> | 
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Store Refund Policy</a>
+            </div>
+
+            <div class="footer-logos_">
+                <img src="logologo.png" alt="GameVerse Logo" width="50">
+            </div>
+        </div>
+    </footer>
+    <script>
+        function confirmSubmission() {
+            // Show an alert message when the form is submitted
+            return alert("Form Submitted Succesfully");
+        }
+        </script>
+</body>
+</html>

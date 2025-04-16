@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <style>
+        /* Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #043246, #d9cde7);
+        }
+
+        .container {
+            background-color: #9cc1c9;
+            width: 450px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .button-box {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+            background: #eee;
+            border-radius: 30px;
+            padding: 5px;
+        }
+
+        .toggle-btn {
+            width: 50%;
+            padding: 12px;
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border-radius: 30px;
+            outline: none;
+        }
+
+        .toggle-btn.active {
+            background-color: #257298;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group {
+            display: none;
+        }
+
+        .input-group.active {
+            display: block;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            outline: none;
+            font-size: 14px;
+            background-color: #f9f9f9;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #257298;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #787a7f;
+        }
+
+        .message {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .message.success {
+            color: green;
+        }
+
+        .message.error {
+            color: red;
+        }
+
+        .forgot-link {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #257298;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Login or Sign Up</h2>
+
+        <div class="button-box">
+            <button type="button" class="toggle-btn active" onclick="toggleForm('login')">Login</button>
+            <button type="button" class="toggle-btn" onclick="toggleForm('signup')">Sign Up</button>
+        </div>
+
+        <div id="success-message" class="message success"></div>
+        <div id="error-message" class="message error"></div>
+
+        <!-- Login Form -->
+        <form id="login-form" class="input-group active" onsubmit="submitForm(event, 'login')">
+            <input type="text" id="login-username" class="input-field" placeholder="Username" required>
+            <input type="password" id="login-password" class="input-field" placeholder="Password" required>
+            <button type="submit" class="submit-btn">Login</button>
+            <div class="forgot-link" onclick="toggleForm('forgot-password')">Forgot Password?</div>
+        </form>
+
+        <!-- Sign-up Form -->
+        <form id="signup-form" class="input-group" onsubmit="submitForm(event, 'signup')">
+            <input type="text" id="signup-username" class="input-field" placeholder="Username" required>
+            <input type="email" id="signup-email" class="input-field" placeholder="Email" required>
+            <input type="password" id="signup-password" class="input-field" placeholder="Password" required>
+            <input type="password" id="signup-confirm-password" class="input-field" placeholder="Confirm Password" required>
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+
+        <!-- Forgot Password Form -->
+        <form id="forgot-password-form" class="input-group" onsubmit="submitForm(event, 'forgot-password')">
+            <input type="email" id="forgot-email" class="input-field" placeholder="Enter your email" required>
+            <button type="button" class="submit-btn" onclick="sendOTP()">Send OTP</button>
+            <input type="text" id="otp" class="input-field" placeholder="Enter OTP" style="display: none;" required>
+            <input type="password" id="new-password" class="input-field" placeholder="New Password" style="display: none;" required>
+            <button type="submit" id="reset-btn" class="submit-btn" style="display: none;">Reset Password</button>
+        </form>
+    </div>
+
+    <script>
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        let generatedOTP = "";
+
+        function toggleForm(formType) {
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            const forgotPasswordForm = document.getElementById('forgot-password-form');
+            const loginBtn = document.querySelector('.button-box button:nth-child(1)');
+            const signupBtn = document.querySelector('.button-box button:nth-child(2)');
+
+            loginForm.classList.remove('active');
+            signupForm.classList.remove('active');
+            forgotPasswordForm.classList.remove('active');
+            loginBtn.classList.remove('active');
+            signupBtn.classList.remove('active');
+
+            if (formType === 'login') {
+                loginForm.classList.add('active');
+                loginBtn.classList.add('active');
+            } else if (formType === 'signup') {
+                signupForm.classList.add('active');
+                signupBtn.classList.add('active');
+            } else if (formType === 'forgot-password') {
+                forgotPasswordForm.classList.add('active');
+            }
+
+            document.getElementById('success-message').innerText = '';
+            document.getElementById('error-message').innerText = '';
+        }
+
+        function sendOTP() {
+            const email = document.getElementById('forgot-email').value;
+            const userExists = users.find(user => user.email === email);
+            const errorMessage = document.getElementById('error-message');
+
+            if (!userExists) {
+                errorMessage.innerText = 'No account found with this email.';
+                return;
+            }
+
+            generatedOTP = Math.floor(100000 + Math.random() * 900000).toString();
+            alert(`Your OTP is: ${generatedOTP}`); 
+
+            document.getElementById('otp').style.display = 'block';
+            document.getElementById('new-password').style.display = 'block';
+            document.getElementById('reset-btn').style.display = 'block';
+            errorMessage.innerText = '';
+        }
+
+        function submitForm(event, formType) {
+            event.preventDefault();
+
+            const successMessage = document.getElementById('success-message');
+            const errorMessage = document.getElementById('error-message');
+
+            if (formType === 'login') {
+                const username = document.getElementById('login-username').value;
+                const password = document.getElementById('login-password').value;
+                const user = users.find(user => user.username === username && user.password === password);
+
+                if (user) {
+                    successMessage.innerText =`Login Successful! Welcome, ${username}`;
+                    errorMessage.innerText = '';
+                    window.location.href = 'main.html'; // Redirect to the main page
+                   
+                } else {
+                    errorMessage.innerText = 'Invalid username or password.';
+                    successMessage.innerText = '';
+                }
+
+            } else if (formType === 'signup') {
+                const username = document.getElementById('signup-username').value;
+                const email = document.getElementById('signup-email').value;
+                const password = document.getElementById('signup-password').value;
+                const confirmPassword = document.getElementById('signup-confirm-password').value;
+
+                if (password !== confirmPassword) {
+                    errorMessage.innerText = 'Passwords do not match.';
+                    successMessage.innerText = '';
+                    return;
+                }
+
+                const existingUser = users.find(user => user.username === username || user.email === email);
+                if (existingUser) {
+                    errorMessage.innerText = 'User with this username or email already exists.';
+                    successMessage.innerText = '';
+                    return;
+                }
+
+                users.push({ username, email, password });
+                localStorage.setItem('users', JSON.stringify(users));
+
+                successMessage.innerText = `Sign Up Successful! Welcome, ${username}`;
+                errorMessage.innerText = '';
+                document.getElementById('signup-form').reset();
+
+            } else if (formType === 'forgot-password') {
+                const enteredOTP = document.getElementById('otp').value;
+                const newPassword = document.getElementById('new-password').value;
+
+                if (enteredOTP === generatedOTP) {
+                    const email = document.getElementById('forgot-email').value;
+                    const userIndex = users.findIndex(user => user.email === email);
+
+                    if (userIndex !== -1) {
+                        users[userIndex].password = newPassword;
+                        localStorage.setItem('users', JSON.stringify(users));
+                        successMessage.innerText = 'Password has been reset successfully!';
+                        errorMessage.innerText = '';
+                        toggleForm('login');
+                    }
+                } else {
+                    errorMessage.innerText = 'Invalid OTP.';
+                }
+            }
+
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,401 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0b0b0b;
+    color: #fff;
+  }
+  
+  .hero {
+    background: linear-gradient(#121212, #1a1a1a);
+    padding: 30px 15px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .logo {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    width: 150px;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    color: #00ccff;
+    margin-top: 0px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    color: #ccc;
+    font-style: italic;
+  }
+  
+
+  
+.plans {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    background-color: #121212;
+  }
+  
+  .plan-cards {
+    display: flex;
+    justify-content: flex-start; 
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 2;
+  }
+  
+  
+  .card {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 12px;
+    width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 204, 255, 0.2);
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card h3 {
+    color: #00ccff;
+  }
+  
+  .card .price {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #3dc6df;
+  }
+  
+  .card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  .card ul li {
+    margin: 10px 0;
+  }
+  
+  .card .btn {
+    background: #3dc6df;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  
+
+  .perks {
+    background-color: #121212;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .perk-grid {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+  }
+  
+  .perk img {
+    width: 70px;
+    margin-bottom: 10px;
+  }
+  .perks h2{
+    margin-bottom: 30px;
+    font-size: xx-large;
+  }
+
+
+  .comparison-table {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #121212;
+  }
+  
+  .comparison-table h2 {
+    font-size: 2rem;
+    color: #00ccff;
+    margin-bottom: 30px;
+  }
+  
+  table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    color: #fff;
+  }
+  
+  table th, table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #444;
+  }
+  
+  table th {
+    background-color: #1e1e1e;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #222;
+  }
+  
+  table td {
+    font-size: 1.1rem;
+  }
+  
+  table td.✔️ {
+    color: #3dc6df;
+  }
+  
+  table td.❌ {
+    color: #f44336;
+  }
+  
+  
+
+  
+  .team-background {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #121212;
+    color: #fff;
+  }
+  
+  .team-background h2 {
+    font-size: 2.5rem;
+    color: #00ccff;
+    margin-bottom: 40px;
+  }
+  
+  .team-members {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .team-member {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 12px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 204, 255, 0.2);
+    transition: transform 0.3s;
+  }
+  
+  .team-member:hover {
+    transform: translateY(-5px);
+  }
+  
+  .team-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    max-width: 150px;
+  }
+  
+  .team-member h3 {
+    color: #00ccff;
+    margin-bottom: 10px;
+  }
+  
+  .team-member .role {
+    color: #3dc6df;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+  
+  .team-member .bio {
+    font-size: 1rem;
+    color: #ccc;
+  }
+  
+  .company-background {
+    margin-top: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 204, 255, 0.2);
+  }
+  
+  .company-background h3 {
+    font-size: 2rem;
+    color: #00ccff;
+    margin-bottom: 20px;
+  }
+  
+  .company-background p {
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.6;
+  }
+
+  
+  
+
+  .newsletter {
+    padding: 70px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    background-color: #171515;
+    transition: background-color 0.3s ease;
+  }
+  
+  body.dark-theme .newsletter {
+    background-color: #eae4e4; 
+  }
+  
+  .newsletter-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .newsletter h2 {
+    font-size: 2rem;
+    color: #fdf9f9;
+    margin-bottom: 15px;
+  }
+  
+  .newsletter p {
+    font-size: 1rem;
+    color: #bcd3f4;
+    margin-bottom: 30px;
+  }
+  
+  .newsletter-form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .newsletter-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #393434;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .newsletter-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .newsletter-btn:hover {
+    background-color: #005bb5;
+  }
+  
+  .confirmation-message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #4CAF50;
+  }
+  
+  .newsletter .newsletter-form {
+    display: inline-block;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  @media (max-width: 768px) {
+    .newsletter h2 {
+      font-size: 1.5rem;
+    }
+  
+    .newsletter p {
+      font-size: 0.9rem;
+    }
+  }
+
+  
+
+
+.footer {
+    background-color: rgba(3, 3, 3, 0.82);
+    color: #fff;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding-top: 20px;
+  text-align: left;
+}
+
+.footer-policies {
+  margin: 20px 0;
+}
+
+.footer-policies a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-policies a:hover {
+  text-decoration: underline;
+}
+
+.footer-logos {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.footer-logos img {
+  width: 50px;
+  height: auto;
+  margin-top: 10px;
+}
+
+.footer-logos_ img {
+  width: 80px;
+  height: auto;
+  margin-top: 0px;
+}
+
+@media (max-width: 600px) {
+  .footer-top, .footer-bottom {
+      text-align: center;
+  }
+
+  .footer-top {
+      flex-direction: column;
+  }
+
+  .footer-logos img {
+      margin: 10px 0;
+  }
+}
+  

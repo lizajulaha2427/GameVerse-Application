@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaming Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+        <img src="logologo.png" alt="Logo" id="explore-button" class="logo" style="margin-top: 25px; width: 90px; height: 80px;">
+        <a href="#" class="nav-item">Home</a>
+        <a href="aboutus.html" class="nav-item">AboutUs</a>
+    </div>
+    <div class="nav-middle">
+        <input type="text" placeholder="Search" class="search-bar" id="searchInput" onkeyup="searchGames()" >
+    </div>
+    <div class="nav-right">
+        <a href="freinds.html" class="nav-item"><i class="fas fa-users icon"></i></a>
+        <a href="addtowishlist.html" class="nav-item"><i class="fas fa-heart icon"></i></a>
+        <a href="addtocart.html" class="nav-item"><i class="fas fa-shopping-cart icon"></i></a>
+        <div class="user-info">
+            <a href="/profile" class="nav-item"><i class="fas fa-user icon"></i></a>
+        </div>
+    </div>
+</nav>
+
+<div id="iframe-container">
+    <div class="iframe-wrapper">
+        <button class="close-btn" id="close-button">×</button>
+        <iframe src="explore.html" id="iframe-content"></iframe>
+    </div>
+</div>
+  <section class="container sections">
+    <div class="slider-wrapper">
+      <button class="arrow left-arrow" onclick="moveSlide(-1)">&#10094;</button>
+      <div class="slider">
+        <figure class="image-container">
+          <img src="https://images.gog-statics.com/ea20f2531a4db7d35cff7e94ad4f8e8ebc1a54ea572235169fe129c7e7975c36.jpg" alt="Sample Image">
+          <figcaption class="slide1" ><br><span> A mockumental action game. Go forth and rock in the absolute<br>weirdest and most messed up simulator<br>&#8377 719</span>
+             <br><br><button id="play" onclick="addToCart('ROCK SIMULATOR', 719, 'https://images.gog-statics.com/ea20f2531a4db7d35cff7e94ad4f8e8ebc1a54ea572235169fe129c7e7975c36.jpg', true)">Buy Now</button><button class="buy" onclick="addToWishlist('ROCK SIMULATOR','https://images.gog-statics.com/ea20f2531a4db7d35cff7e94ad4f8e8ebc1a54ea572235169fe129c7e7975c36.jpg', 719)"> + Add To Wishlist</button></figcaption>
+        </figure>
+        <figure class="image-container">
+          <img src="https://4kwallpapers.com/images/wallpapers/ea-sports-fc-25-3840x2160-17827.jpg" alt="Sample Image">
+          <figcaption class="slide2"><h1>FC25<br></h1><br><span>Out Now <br>FC 25 is now available worldwide. Discover<br>more ways to win for the club like all-new 5v5<br> Rush and FC IQ<br><br>&#8377 5999</span>
+            <br> <br> <button id="play" onclick="addToCart('FC25', 5999, 'https://4kwallpapers.com/images/wallpapers/ea-sports-fc-25-3840x2160-17827.jpg', true)">Buy Now</button><button class="buy" onclick="addToWishlist('FC25','https://4kwallpapers.com/images/wallpapers/ea-sports-fc-25-3840x2160-17827.jpg', 5999)"> + Add To Wishlist</button></figcaption>
+        </figure>
+        <figure class="image-container">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202212/0712/L8VKAI8KNTHehsYve7yklhsN.jpg" alt="Sample Image">
+          <figcaption class="slide3"><br><span><br>Embody the superhuman skill and brutality of a Space Marine.<br>Unleash deadly abilities and devastating weaponry.<br>to obliterate the relentless Tyranid swarms.<br><br>&#8377 2799</span>
+            <br> <br><button id="play1" onclick="addToCart('SPACE MARINE', 2799, 'https://image.api.playstation.com/vulcan/ap/rnd/202212/0712/L8VKAI8KNTHehsYve7yklhsN.jpg', true)">Buy Now</button><button class="buy" style="color: black;" onclick="addToWishlist('SPACE MARINE', 'https://image.api.playstation.com/vulcan/ap/rnd/202212/0712/L8VKAI8KNTHehsYve7yklhsN.jpg', 5999)"> + Add To Wishlist</button></figcaption>
+        </figure>
+        <figure class="image-container">
+          <img src="https://cdn.nexus.gg/assets/vidya/n3gcLcNUXaPo9iJMfjfxc/images/game-banner.jpg" alt="Sample Image">
+          <figcaption class="slide4"><br><span><br><br>Paladins is set in a vibrant fantasy world cast of Champions <br>with unique abilities, ranging from humans to mystical elves,<br>and jetpack-clad dragons.<br><br>Free</span>
+            <br> <br><button id="play" >Play Now</button><button class="buy" onclick="addToWishlist('PALADINS', 'https://cdn.nexus.gg/assets/vidya/n3gcLcNUXaPo9iJMfjfxc/images/game-banner.jpg', 0)"> + Add To Wishlist</button></figcaption>
+        </figure>
+        
+        <figure class="image-container">
+          <img src="https://assets.xboxservices.com/assets/29/4e/294e0a5e-334f-4bfd-a242-b8cefddbdf6b.jpg?n=Red-Dead-Redemption-II_Sneaky-Slider-1084_Stand-Alone_1600x675.jpg" alt="Sample Image">
+          <figcaption class="slide5"><br><br><span><span>Coming October 29</span><br><br>For the first time in its legacy, play red<br>dead Detemption on PC in stunning <br>new detail<br><br>&#8377 3799</span>
+            <br> <br><button id="play" onclick="addToCart('RED DEAD ONLINE', 3799, 'https://assets.xboxservices.com/assets/29/4e/294e0a5e-334f-4bfd-a242-b8cefddbdf6b.jpg?n=Red-Dead-Redemption-II_Sneaky-Slider-1084_Stand-Alone_1600x675.jpg', true)" >Pre-Purchase Now</button><button class="buy" onclick="addToWishlist('RED DEAD ONLINE', 'https://assets.xboxservices.com/assets/29/4e/294e0a5e-334f-4bfd-a242-b8cefddbdf6b.jpg?n=Red-Dead-Redemption-II_Sneaky-Slider-1084_Stand-Alone_1600x675.jpg', 3799)"> + Add To Wishlist</button></figcaption>
+        </figure>
+        
+        <figure class="image-container">
+          <img src="https://cdn1.epicgames.com/spt-assets/4cce878b79d3417fac917cf51480b0e7/diplomacy-is-not-an-option-offer-1gys1.jpg" alt="Sample Image">
+          <figcaption class="slide6" ><br><span> You were born a feudal lord. Sounds good, right? But <br>you're bored of hunting, executions and<br>tournaments. Even of feasts with beautiful maidens<br><br>&#8377 845</span>
+            <br> <br><button id="play1" onclick="addToCart('DIPLOMACY IS NOT AN OPTION', 845, 'https://cdn1.epicgames.com/spt-assets/4cce878b79d3417fac917cf51480b0e7/diplomacy-is-not-an-option-offer-1gys1.jpg', true)">Buy Now</button><button class="buy" style="color: black;" onclick="addToWishlist('DIPLOMACY IS NOT AN OPTION', 'https://cdn1.epicgames.com/spt-assets/4cce878b79d3417fac917cf51480b0e7/diplomacy-is-not-an-option-offer-1gys1.jpg', 845)"> + Add To Wishlist</button></figcaption>
+        </figure>
+        <figure class="image-container">
+          <img src="https://cdn1.epicgames.com/spt-assets/2a14cec8a1fc4ab9a74dd46bf147c9e6/grime-rrno0.jpg" alt="Sample Image">
+          <figcaption class="slide7"><br><span><br>GRIME is a fast, unforgiving Action-Adventure<br> RPG in which you crush your foes with living <br>weapons that mutate form and function.<br><br><br>&#8377 589</span>
+            <br> <br><button id="play" onclick="addToCart('GRIME', 589, 'https://cdn1.epicgames.com/spt-assets/2a14cec8a1fc4ab9a74dd46bf147c9e6/grime-rrno0.jpg', true)">Buy Now</button><button class="buy" onclick="addToWishlist('GRIME', 'https://cdn1.epicgames.com/spt-assets/2a14cec8a1fc4ab9a74dd46bf147c9e6/grime-rrno0.jpg', 589)"> + Add To Wishlist</button></figcaption>
+        </figure>
+        <figure class="image-container">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202308/0209/f7f6e697e3ba4fd8243adebc2545fe784d985a7d938547b7.jpg" alt="Sample Image">
+          <figcaption class="slide8" class="offthegrid"><h1> Off the Grid</h1><br><br><span>Now  Available<br>
+            <br>Teardrop Island desperately needs a saviour.<br>Too bad it got you instead.....<br> <br>Free</span><br> <br> <button id="play1">Play Now </button><button class="buy"  onclick="addToWishlist('OFF THE GRID', 'https://image.api.playstation.com/vulcan/ap/rnd/202308/0209/f7f6e697e3ba4fd8243adebc2545fe784d985a7d938547b7.jpg', 0)"> + Add To Wishlist</button></figcaption>
+        </figure>
+      </div>
+      <button class="arrow right-arrow" onclick="moveSlide(1)">&#10095;</button>
+      <div class="slider-nav">
+        <a href="#slide-1" class="dot"></a>
+        <a href="#slide-2" class="dot"></a>
+        <a href="#slide-3" class="dot"></a>
+        <a href="#slide-4" class="dot"></a>
+        <a href="#slide-5" class="dot"></a>
+        <a href="#slide-6" class="dot"></a>
+        <a href="#slide-7" class="dot"></a>
+        <a href="#slide-8" class="dot"></a>
+      </div>
+    </div>
+  </section>
+<div class="game-section sections">
+      <h2 style="text-align: left; margin-left: 30px;">Featured games</h2>
+      <div class="game-carousel">
+          <button class="arroww left" onclick="moveGames(-1)">&lt;</button>
+        <div class="game-container" id="featured-games">
+            <div class="game-item game-items"><img class="featured" src="https://www.shellshock.io/img/previewImage_shellShockers.webp" alt="Shell Shockers"> <div class="game-name">Shell Shockers</div></div>
+            <div class="game-item game-items"><img class="featured" src="https://i.ytimg.com/vi/o6e_L3P7tzQ/maxresdefault.jpg" alt="Atom Eve"> <div class="game-name">Atom Eve</div></div>
+            <div class="game-item game-items"><img class="featured" src="https://www.spritesanddice.com/media/images/Against_The_Storm.width-1080.png" alt="Against the storm"><div class="game-name">Against the storm</div></div>
+            <div class="game-item game-items"><img class="featured" src="https://images.crazygames.com/anger-foot-3d_16x9/20241002033609/anger-foot-3d_16x9-cover?auto=format%2Ccompress&q=45&cs=strip&ch=DPR&w=1200&h=630&fit=crop" alt="Anger Foot 3D"><div class="game-name">Anger Foot 3D</div></div>
+            <div class="game-item game-items"><img class="featured" src="https://i.ytimg.com/vi/Dg4WjLJjlDM/maxresdefault.jpg" alt="Honkai Impact"><div class="game-name">Honkai Impact</div></div>
+            <div class="game-item game-items"><img class="featured" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa3Z6hkPJyOm19QVfOfOCEETFQHjMZFHQEtw&s" alt="Gulper"><div class="game-name"> Gulper</div></div>
+            <div class="game-item game-items"><img class="featured" src="https://virtualbackgrounds.site/wp-content/uploads/2021/02/grand-theft-auto-v-cover-art.jpg" alt="Grand Theft Auto"><div class="game-name">Grand Theft Auto</div></div>
+            <div class="game-item game-items"><img class="featured" src="https://images.crazygames.com/epic-empire-tower-defense_16x9/20240819044402/epic-empire-tower-defense_16x9-cover?auto=format%2Ccompress&q=45&cs=strip&ch=DPR&w=1200&h=630&fit=crop" alt="Epic Empire"><div class="game-name">Epic Empire</div></div>
+        </div>
+          <button class="arroww right" onclick="moveGames(1)">&gt;</button>
+      </div>
+
+      <h2 style="text-align: left; margin-left: 30px; margin-top: 3rem;">Free games</h2>
+      <div class="game-carousel sections">
+        <button class="arroww left" onclick="moveGame(-1)">&lt;</button>
+        <div class="game-container " id="free">
+            <div class="game-item game-items"><img class="free" src="https://wallpapers.com/images/hd/1080p-rise-of-the-tomb-raider-background-kmbjzwv5xqzx6pus.jpg" alt="Tomb Raider"><div class="game-name">Tomb Raider</div></div>
+            <div class="game-item game-items"><img class="free" src="https://manybackgrounds.com/images/hd/apex-legends-hd-game-cover-70x25aizh3azzhwf.jpg" alt="Apex Legends"><div class="game-name">Apex Legends</div></div>
+            <div class="game-item game-items"><img class="free" src="https://images6.alphacoders.com/136/thumb-1920-1363588.jpeg" alt="Hades It"><div class="game-name">Hades It</div></div>
+            <div class="game-item game-items"><img class="free" src="https://cdn1.epicgames.com/spt-assets/5a5bf94acd0a417480a0c81a9491b60e/road-to-exotics-1ongq.jpg?resize=1&w=480&h=270&quality=medium" alt="Road to Exotics"><div class="game-name">Road to Exotics</div></div>
+            <div class="game-item game-items"><img class="free" src="https://images.crazygames.com/games/deadshot-io/cover_16x9-1694770506842.png?auto=format,compress&q=75&cs=strip" alt="Dead Shot"><div class="game-name">Dead Shot</div></div>
+            <div class="game-item game-items"><img class="free" src="https://cdn1.epicgames.com/spt-assets/c1586295960b46f88bbfeec32c199e0e/wuthering-waves-uj7dz.jpg?resize=1&w=480&h=270&quality=medium" alt="Wuthering Waves"><div class="game-name">Wuthering Waves</div></div>
+            <div class="game-item game-items"><img class="free" src="https://i.gadgets360cdn.com/large/fortnite_deep_freeze_bundle_1539093563772.jpg" alt="Fortnite"><div class="game-name">Fortnite</div></div>
+            <div class="game-item game-items"><img class="free" src="https://cdn1.epicgames.com/offer/77f2b98e2cef40c8a7437518bf420e47/EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a40aebf3bbc130d14c5c7" alt="Cyberpunk 2077"><div class="game-name">Cyberpunk 2077</div></div>
+        </div>
+        <button class="arroww right" onclick="moveGame(1)">&gt;</button>
+      </div>
+</div>
+<div class="multiplayer sections">
+  <h1 class="h1multi" >Play With<br>Friends!</h1>
+  <img src="multiplayer.jpg" alt="Multiplayer">
+  <div  class="multidiv game-items"><h1 style="color: black;">Local Multiplayer</h1><h2 class="h2multi"> Play on same device</h2> <a href="localMultiplayer.html"> <button type="button" class="multi" >Explore Games</button></a></div>
+  <div class="multidiv game-items"><h1 style="color: black;">Online Multiplayer</h1><h2 class="h2multi">Play on separate devices</h2> <a href="onlineMultiplayer.html"> <button type="button" class="multi" >Explore Games</button></a></div>
+</div>
+<div class="game-section sections">
+  <h2 style="text-align: left; margin-left: 30px;">Originals</h2>
+      <div class="game-carousel">
+        <button class="arroww left" onclick="move(-1)">&lt;</button>
+          <div class="game-container" id="original">
+            <div class="game-item game-items"><img class="original" src="https://assets-prd.ignimgs.com/2024/08/22/redacted-button2-1724336938828.jpg" alt="Redeacted"><div class="game-name1">Redacted</div></div>
+            <div class="game-item game-items"><img class="original" src="https://image.api.playstation.com/vulcan/ap/rnd/202305/2420/fbd0dcc88b31805fc7d49f59b8e0e5d0276403cde7fb8cc8.jpg" alt="Alan Wake II"><div class="game-name1">Alan Wake II</div></div>
+            <div class="game-item game-items"><img class="original" src="https://image.api.playstation.com/vulcan/ap/rnd/202203/1520/e6VbPQ56CBzVPgKmWdMMrICz.png" alt="Dead By Daylight"><div class="game-name1">Dead By Daylight</div></div>
+            <div class="game-item game-items"><img class="original" src="https://upload.wikimedia.org/wikipedia/en/thumb/8/81/The_Outlast_Trials_cover.jpg/220px-The_Outlast_Trials_cover.jpg" alt="The Outlast Trials"><div class="game-name1">The Outlast Trials</div></div>
+            <div class="game-item game-items"><img class="original" src="https://upload.wikimedia.org/wikipedia/en/9/9a/Among_Us_cover_art.jpg" alt="Among Us"><div class="game-name1">Among Us</div></div>
+            <div class="game-item game-items"><img class="original" src="https://image.api.playstation.com/vulcan/ap/rnd/202009/2915/1RnKffW6hgUKKDj6NfiDhpg3.jpg" alt="Overcooked 2"><div class="game-name1">Overcooked 2</div></div>
+            <div class="game-item game-items"><img class="original" src="https://image.api.playstation.com/cdn/UP1001/CUSA03979_00/ivePKSUfdcJLlHTUTVLfWVCElVosmzyx.png" alt="Bioshock"><div class="game-name1">Bioshock</div></div>
+            <div class="game-item game-items"><img class="original" src="https://s3.amazonaws.com/cms-assets.jackboxgames.com/PP_3_tall_tile_fbd8fc2c41.jpg" alt="The JackBox Party Pack"><div class="game-name1">JackBox Party Pack </div></div>
+          </div>
+        <button class="arroww right" onclick="move(1)">&gt;</button>
+      </div>
+</div>
+
+    <div style="pointer-events: auto;" class="grid-wrapper-sXv sections">
+        <div class="category-card-LL8 game-items">
+            <h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Top Sellers > </h1>
+            <ul>
+                <li>
+                    <img class="image1" src="https://image.api.playstation.com/vulcan/ap/rnd/202306/3020/0c05ae77009875cbfd368d348c2c4be3d04f7bdcc5e6ce5d.jpg" alt="Star War Outlaws">
+                    <img class="" style="position: absolute; height: 20px; width: 18px; margin-left: 55px; margin-top: 58px;" src="lock.jpg">
+                    <div class="game-info">
+                        <span style="font-weight: lighter;">Star Wars Outlaws</span>
+                        <span style="font-weight: lighter;" class="price">&#8377; 200</span>
+                        <br>
+                        <button style="width: 89px; font-weight: bold;" onclick="addToCart('STAR WAR OUTLAWS', 200, 'https://image.api.playstation.com/vulcan/ap/rnd/202306/3020/0c05ae77009875cbfd368d348c2c4be3d04f7bdcc5e6ce5d.jpg', true)" > Add to Cart</button>
+                    </div>
+                    <div class="wishlist-icon">
+                        <span class="plus-sign">+</span>
+                        <div class="wishlist-tooltip">Add to Wishlist</div>
+                    </div>
+                </li>
+                <li>
+                    <img class="image1" src="https://assets-prd.ignimgs.com/2024/08/18/blackmyth-1723969364570.jpg" alt="Genshin Impact">
+                    <img style="position: absolute; height: 20px; width: 18px; margin-left: 55px; margin-top: 58px;" src="lock.jpg">
+                    <div class="game-info">
+                        <span style="font-weight: lighter;">Black Myth</span>
+                        <span style="font-weight: lighter;" class="price">&#8377; 320</span>
+                        <br>
+                        <button style="width: 89px; font-weight: bold;" onclick="addToCart('BLACK MYTH', 320, 'https://assets-prd.ignimgs.com/2024/08/18/blackmyth-1723969364570.jpg', true)"> Add to Cart</button>
+                    </div>
+                    <div class="wishlist-icon">
+                        <span class="plus-sign">+</span>
+                        <div class="wishlist-tooltip">Add to Wishlist</div>
+                    </div>
+                </li>
+                <li>
+                    <img class="image1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2_skHwee0V3-w5zkwJOa40AjyhVjHDn14wg&s" alt="Rocket League">
+                    <img style="position: absolute; height: 20px; width: 18px; margin-left: 55px; margin-top: 58px;" src="lock.jpg">
+                    <div class="game-info">
+                        <span style="font-weight: lighter;">Dead By Daylight</span>
+                        <span style="font-weight: lighter;" class="price">&#8377; 463.2</span>
+                        <br>
+                        <button  style="width: 89px; font-weight: bold;" onclick="addToCart('DEAD BY DAYLIGHT', 463.2, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2_skHwee0V3-w5zkwJOa40AjyhVjHDn14wg&s', true)" > Add to Cart</button>
+                    </div>
+                    <div class="wishlist-icon">
+                        <span class="plus-sign">+</span>
+                        <div class="wishlist-tooltip">Add to Wishlist</div>
+                    </div>
+                </li>
+                <li>
+                    <img class="image1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU7K2n_L-hKTdbZuhyfd18nWTowGApCHKtgQ&s" alt="Honkai Star Rail">
+                    <img style="position: absolute; height: 20px; width: 18px; margin-left: 55px; margin-top: 58px;" src="lock.jpg">
+                    <div class="game-info">
+                        <span style="font-weight: lighter;">Genshin</span>
+                        <span style="font-weight: lighter;" class="price">&#8377; 1052</span>
+                        <br>
+                        <button  style="width: 89px; font-weight: bold;" onclick="addToCart('GENSHIN', 1052, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU7K2n_L-hKTdbZuhyfd18nWTowGApCHKtgQ&s', true)" > Add to Cart</button>
+                    </div>
+                    <div class="wishlist-icon">
+                        <span class="plus-sign">+</span>
+                        <div class="wishlist-tooltip">Add to Wishlist</div>
+                    </div>
+                </li>
+                <li>
+                    <img class="image1" src="https://wallpapercave.com/wp/wp2062812.jpg" alt="Destiny 2">
+                    <img style="position: absolute; height: 20px; width: 18px; margin-left: 55px; margin-top: 58px;" src="lock.jpg">
+                    <div class="game-info">
+                        <span style="font-weight: lighter;">Destiny 2</span>
+                        <span style="font-weight: lighter;" class="price">&#8377; 153</span>
+                        <br>
+                        <button  style="width: 89px; font-weight: bold;" onclick="addToCart('DESTINY 2', 153, 'https://wallpapercave.com/wp/wp2062812.jpg', true)"> Add to Cart</button>
+                    </div>
+                    <div class="wishlist-icon">
+                        <span class="plus-sign">+</span>
+                        <div class="wishlist-tooltip">Add to Wishlist</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="vertical-divider"></div>
+
+        <div class="category-card-LL8 game-items">
+            <h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" >Most Played ></h1>
+            <ul>
+                <li>
+                    <img class="image1" src="https://readwrite.com/wp-content/uploads/2024/10/FpeW3ljWcAcDIpD-719x719.jpeg" alt="Off The Grid">
+                    <img style="position: absolute; height: 20px; width: 18px; margin-left: 55px; margin-top: 58px;" src="lock.jpg">
+                    <div class="game-info">
+                        <span style="font-weight: lighter;">Off the Grid</span>
+                        <span style="font-weight: lighter;" class="price">&#8377; 890</span>
+                        <br>
+                        <button  style="width: 89px; font-weight: bold;" onclick="addToCart('OFF THE GRID', 890, 'https://readwrite.com/wp-content/uploads/2024/10/FpeW3ljWcAcDIpD-719x719.jpeg', true)"> Add to Cart</button>
+                    </div>
+                    <div class="wishlist-icon">
+                        <span class="plus-sign">+</span>
+                        <div class="wishlist-tooltip">Add to Wishlist</div>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://dotesports-media.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2019/03/29073643/FortniteEsports_news_competitive-fortnite-state-of-development-part-1_competitive-state-of-development-part-2_BR07_News_Featured_StateOfDev-1-1920x1080-e0f5d8daa439885c2d0021ccd717e29abd25e40d.jpg" alt="Fortnite">
+                    <div class="game-info">
+                        <span style="font-weight: lighter;">FORTNITE</span>
+                        <br>
+                        <span style="font-weight: lighter; color: rgb(191, 189, 189);" class="price">Free</span>
+                    </div>
+                    <div class="wishlist-icon">
+                        <span class="plus-sign">+</span>
+                        <div class="wishlist-tooltip">Add to Wishlist</div>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTERbMwGV7gs-p7wJdZsSNmrmDhJTZN0oRZg&s" alt="Rocket League">
+                    <div class="game-info">
+                        <span style="font-weight: lighter;">MURK</span>
+                        <span style="font-weight: lighter; color: rgb(191, 189, 189);" class="price"> Free</span>
+                        <br>
+                        <button  style="width: 95px; font-weight: bold;"> New On Site</button>
+                    </div>
+                    <div class="wishlist-icon">
+                        <span class="plus-sign">+</span>
+                        <div class="wishlist-tooltip">Add to Wishlist</div>
+                    </div>
+                </li>
+                <li>
+                    <img class="image1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl4MwRmxpfJCQHLWiZuQN_IlpfGm-jWDXEbg&s" alt="Fall Guys">
+                    <div class="game-info">
+                        <span style="font-weight: lighter;">Departed Away</span>
+                        <br>
+                        <button  style="width: 95px; color: white; background-color: rgb(97, 96, 96); display: flex;" onclick="addpremium()"> <img src="premium.png" alt="premium" style="display: flex; flex-direction: row; position: relative; height: 15px; width: 20px; margin: 0; pointer-events: auto;" > Premium</button>
+                    </div>
+                    <div class="wishlist-icon">
+                        <span class="plus-sign">+</span>
+                        <div class="wishlist-tooltip">Add to Wishlist</div>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://i.pinimg.com/originals/53/ca/5d/53ca5d3fffcb69dd11396d3086f2e337.jpg" alt="VALORANT">
+                    <div class="game-info">
+                        <span style="font-weight: lighter;">VALORANT</span>
+                        <br>
+                        <span style="font-weight: lighter; color: rgb(191, 189, 189);" class="price">Free</span>
+                    </div>
+                    <div class="wishlist-icon">
+                        <span class="plus-sign">+</span>
+                        <div class="wishlist-tooltip">Add to Wishlist</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="vertical-divider"></div>
+
+        <div class="category-card-LL8 game-items">
+            <h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Top Upcoming ></h1>
+            <ul>
+                <li>
+                    <img class="image1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB_Rr41dMFgwmiHvBDJzRHxsUZ2lzR6Io9oA&s" alt="Fortnite">
+                    <div class="game-info">
+                        <span style="font-weight: lighter;">Mirror Of Darkness</span>
+                        <br>
+                        <button  style="width: 95px; color: white; background-color: rgb(97, 96, 96); display: flex; " onclick="addpremium()"> <img src="premium.png" alt="premium" style="display: flex; flex-direction: row; position: relative; height: 15px; width: 20px; margin: 0; " > Premium</button>
+                    </div>
+                    <div class="wishlist-icon">
+                        <span class="plus-sign">+</span>
+                        <div class="wishlist-tooltip">Add to Wishlist</div>
+                    </div>
+                </li>
+                <li>
+                    <img class="image1" src="https://upload.wikimedia.org/wikipedia/en/e/ec/PC_Building_Simulator_Cover.png" alt="Rocket League">
+                    <div class="game-info">
+                        <span style="font-weight: lighter;">PC Building Simulator</span>
+                        <br>
+                        <button  style="width: 95px; color: white; background-color: rgb(97, 96, 96); display: flex;" onclick="addpremium()"> <img src="premium.png" alt="premium" style="display: flex; flex-direction: row; position: relative; height: 15px; width: 20px; margin: 0; " > Premium</button>
+                    </div>
+                    <div class="wishlist-icon">
+                        <span class="plus-sign">+</span>
+                        <div class="wishlist-tooltip">Add to Wishlist</div>
+                    </div>
+                </li>
+                <li>
+                    <img class="image1" src="https://cdn1.epicgames.com/spt-assets/1213d3f00c01436e8239d18ee4157dd3/thewatch-127z9.png" alt="Genshin Impact">
+                    <div class="game-info">
+                        <span style="font-weight: lighter;">The Watch</span>
+                        <br>
+                        <button  style="width: 95px; color: white; background-color: rgb(97, 96, 96); display: flex;" onclick="addpremium()"> <img src="premium.png" alt="premium" style="display: flex; flex-direction: row; position: relative; height: 15px; width: 20px; margin: 0; " > Premium</button>
+                    </div>
+                    <div class="wishlist-icon">
+                        <span class="plus-sign">+</span>
+                        <div class="wishlist-tooltip">Add to Wishlist</div>
+                    </div>
+                </li>
+                <li>
+                    <img class="image1" src="https://cdn1.epicgames.com/offer/97590ba7ef144232b14093375c468032/EGS_TheWolfAmongUs2_Telltale_S2_1200x1600-28a121945b86101ea1b20cc3d5f86e78" alt="VALORANT">
+                    <div class="game-info">
+                        <span style="font-weight: lighter;">Wolf Amoung Us</span>
+                        <br>
+                        <button  style="width: 95px; color: white; background-color: rgb(97, 96, 96); display: flex;" onclick="addpremium()"> <img src="premium.png" alt="premium" style="display: flex; flex-direction: row; position: relative; height: 15px; width: 20px; margin: 0; " > Premium</button>
+                    </div>
+                    <div class="wishlist-icon">
+                        <span class="plus-sign">+</span>
+                        <div class="wishlist-tooltip">Add to Wishlist</div>
+                    </div>
+                </li>
+                <li>
+                    <img class="image1" src="https://cdn1.epicgames.com/spt-assets/64502ad36cbc499399e9b795922446a4/nyan-heroes-4oped.png" alt="Nyan Heros">
+                    <div class="game-info">
+                        <span style="font-weight: lighter;">Nyan Heros</span>
+                        <br>
+                        <button  style="width: 95px; color: white; background-color: rgb(97, 96, 96); display: flex;" onclick="addpremium()"> <img src="premium.png" alt="premium" style="display: flex; flex-direction: row; position: relative; height: 15px; width: 20px; margin: 0; " > Premium</button>
+                    </div>
+                    <div class="wishlist-icon">
+                        <span class="plus-sign">+</span>
+                        <div class="wishlist-tooltip">Add to Wishlist</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="premiumplan sections ">
+        <div class="freee">
+            <img style="margin: 30px;" src="gift.png" height="60px" width="75px" >
+            <h1 style="margin-top: 45px;">Free Games</h1>
+           <a href="FreeGames.html"> <button style="background-color: #2b2b2b; border: 2px solid rgb(139, 137, 137); width: 110px; height: 50px; color: white; margin-top: 30px; margin-left: 900px; font-weight: bold; border-radius: 12px;">View More</button></a>
+        </div>
+        <div class="freee">
+            <img style="margin-left: 40px; margin-top: 30px;" src="https://i.ytimg.com/vi/o6e_L3P7tzQ/maxresdefault.jpg" alt="" height="250px" width="400px">
+            <img style="margin-left: 40px; margin-top: 30px;" src="https://cdn1.epicgames.com/spt-assets/16244a18d39c4d30919ead91c7860397/kardboard-kings-ji5l9.png" alt="" height="250px" width="400px">
+            <img style="margin-left: 40px; margin-top: 30px;" src="https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000052933/ca4daae0eaae22b18cefda3e0ca948516794309d5a885b650671d9ec1987843d" alt="" height="250px" width="400px">
+        </div>
+        <div class="freee sections">
+            <div class="free1 game-items">
+                <h2 style="margin-left: 40px;">Invisible presents: Atom Eve</h2>
+                <h3 style="margin-left: 40px; font-weight: lighter;">Free now: Oct 24 at 8:30</h3>
+            </div>
+            <div class="free1 game-items ">
+                <h2 style="margin-left: 145px;">Kardboard Kings</h2>
+                <h3 style="margin-left: 145px; font-weight: lighter;">Free now: Oct 24 at 8:30</h3>
+            </div>
+            <div class="free1 game-items">
+                <h2 style="margin-left: 260px;">Moving Out</h2>
+                <h3 style="margin-left: 260px; font-weight: lighter;">Free Oct 24 - Oct 31</h3>
+            </div>
+        </div>
+        
+    </div>
+    <div class="game-section sections game-items">
+        <h2 style="text-align: left; margin-left: 30px; margin-top: 3rem;">Cool games</h2>
+        <div class="game-carousel">
+            <button class="arroww left" onclick="moved(-1)">&lt;</button>
+            <div class="game-container" id="moved">
+                <div class="game-item game-items"><img style="height: 200px; width: 300px; margin-right: 5px;" src="https://ddv.assets.gameloft.com/assets/DDV_23279_S_Update7_Key_Art_A_01_OFF_30_LS_Meta_737ffb2dca.jpg" alt="Dreamlight Valley"><div class="game-name1">Dreamlight Valley</div></div>
+                <div class="game-item game-items"><img style="height: 200px; width: 300px; margin-right: 5px;" src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1336490/capsule_616x353.jpg?t=1728907231" alt="Against The Storm"><div class="game-name1">Against The Storm</div></div>
+                <div class="game-item game-items"><img style="height: 200px; width: 300px; margin-right: 5px;" src="https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_download_software_1/2x1_NSwitchDS_GigaBash_image1600w.jpg" alt="Giga Bash"><div class="game-name1">Giga Bash</div></div>
+                <div class="game-item game-items"><img style="height: 200px; width: 300px; margin-right: 5px;" src="https://cdn1.epicgames.com/spt-assets/ba1b7bb6f5934749bdfb358ef4a458d4/naraka-bladepoint-195qt.jpg" alt="Naraka"><div class="game-name1">Naraka</div></div>
+                <div class="game-item game-items"><img style="height: 200px; width: 300px; margin-right: 5px;" src="https://img.opencritic.com/game/1892/o/rKpJDkxK.jpg" alt="World Of Worships"><div class="game-name1">World Of Worships</div></div>
+                <div class="game-item game-items"><img style="height: 200px; width: 300px; margin-right: 5px;" src="https://cdn1.epicgames.com/spt-assets/5da3e878152345d5bd225ea0aec8347e/return-alive-1yvv5.jpg?resize=1&w=480&h=270&quality=medium" alt="Return Alive"><div class="game-name1">Return Alive</div></div>
+                <div class="game-item game-items"><img style="height: 200px; width: 300px; margin-right: 5px;" src="https://cdn1.epicgames.com/spt-assets/c31b6b64a432407b993eed09cd4f1abb/shardbound-1ykn9.png?resize=1&w=480&h=270&quality=medium" alt="Shardbound"><div class="game-name1">Shardbound</div></div>
+                <div class="game-item game-items"><img style="height: 200px; width: 300px; margin-right: 5px;" src="https://store-images.s-microsoft.com/image/apps.63069.13516489167520418.22b76ab9-a8f0-4921-9cf6-55645b8540e5.b17ecc68-fa18-4d1f-91dc-d8c2b714b9be?q=90&w=336&h=200" alt="Cyberpunk 2077"><div class="game-name1">Farming Simulator</div></div>
+            </div>
+            <button class="arroww right" onclick="moved(1)">&gt;</button>
+        </div>
+    </div>
+    <div class="premium sections">
+            <img src="logologo.png" height="300px" width="300px">
+            <div class="gameplan game-items">
+            <h1 style="color: black; margin-top: 90px; font-size: 40px; text-align: left;" >GameVerse Premium</h1>
+            <h2 style="color: black;  text-align: center;"> Unlimited games without ads <br>Starting at only &#8377; 250</h2>
+            </div>
+            <div style="width: 15rem; height: 18.5rem; background-color: #58accc; margin-top: 30px; margin-left: 100px; border-radius: 10px; text-align: center;"><h1 style="color: black;">Get Monthly</h1><h2 style="color: black; margin-top: 35px; font-weight: bold;"> &#8377; 250/month</h2> <p style="color: black; font-size: 20px; margin-top: 38px;">Add upto 2 members</p><br><a href="membership.html"> <button type="button" class="premiumm" >Premium</button></a></div>
+            <div style="width: 15rem; height: 18.5rem; background-color: #58accc; margin-top: 30px; margin-left: 60px; border-radius: 10px; text-align: center;"><h1 style="color: black;">Get Yearly</h1><h2 style="color: black; margin-top: 35px; font-weight: bold;">  &#8377; 3000/year <br>+1 month free</h2> <p style="color: black; font-size: 20px; margin-top: 30px;">Add upto 4 members</p><a href="membership.html"><button type="button" class="premiumm" >Premium</button></a></div>
+    </div>
+
+    <div class="game-section sections">
+        <h2 style="text-align: left; margin-left: 30px; margin-top: 3rem;">Game Description</h2>
+        <div class="game-carousel">
+            <button class="arroww left" onclick="movey(-1)">&lt;</button>
+            <div class="game-container" id="rexr">
+                <div style="display: flex; flex-direction: column; text-align: left;"  class="game-item game-items"><img style="height: 300px; width: 500px; margin-right: 5px;" src="https://i.ytimg.com/vi/VwBQFrLO2SM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDVSBxmTvxa3EJtNHNc5DJn6lE2lQ" alt="Dreamlight Valley"><div><h1>Wild Bastards</h1><p>Yeehaw! Wild Bastards, the spiritual successor to the epic strategy shooter Void Bastards, is coming to EGS on September 12.</p></div></div>
+                <div style="display: flex; flex-direction: column; text-align: left;" class="game-item game-items"><img style="height: 300px; width: 500px; margin-right: 5px;" src="https://i.ytimg.com/vi/XDJMLaVg8zQ/maxresdefault.jpg" alt="Against The Storm"><div><h1>The Mix Seattle</h1><p>The MIX will help kick off the Fall season with this showcase where folks can play games and chat with game creators.</p></div></div>
+                <div style="display: flex; flex-direction: column; text-align: left;" class="game-item game-items"><img style="height: 300px; width: 500px; margin-right: 5px;" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1205480/capsule_616x353.jpg?t=1725001897" alt="Giga Bash"><div><h1>Monster Jam</h1><p>It's time to jump into a groundbreaking off-road arcade racing game, packed with thrilling sprints and unique tricks !</p></div></div>
+                <div style="display: flex; flex-direction: column; text-align: left;" class="game-item game-items"><img style="height: 300px; width: 500px; margin-right: 5px;" src="https://cdn2.unrealengine.com/egs-rocketleague-psyonixllc-s3-2560x1440-72870413f97e.jpg" alt="Naraka"><div><h1>Rocket League</h1><p>The world of Marvel's Spider-Man swings into Rocket League for this year's Haunted Hallows!</p></div></div>
+                <div style="display: flex; flex-direction: column; text-align: left;" class="game-item game-items"><img style="height: 300px; width: 500px; margin-right: 5px;" src="https://img.youtube.com/vi/pqpvBzCgJQM/maxresdefault.jpg" alt="World Of Worships"><div><h1>Fall Guys</h1><p>Move like clockwork with these steampunk treasures! Cogs and rivets, steam and sprockets!</p></div></div>
+                <div style="display: flex; flex-direction: column; text-align: left;" class="game-item game-items"><img style="height: 300px; width: 500px; margin-right: 5px;" src="https://i.ytimg.com/vi/07bVXZOS-Vo/maxresdefault.jpg" alt="Return Alive"><div><h1>The Sims</h1><p>The Sims 4 is free to download! Unleash your imagination and create a unique world of Sims that's an expression of you.</p></div></div>
+            </div>
+            <button class="arroww right" onclick="movey(1)">&gt;</button>
+        </div>
+    </div>
+  <footer class="footer">
+    <div class="footer-top">
+        <div class="social-icons">
+            <a href="#" aria-label="Instagram">
+                <img src="https://static.vecteezy.com/system/resources/previews/018/930/413/original/instagram-logo-instagram-icon-transparent-free-png.png" 
+                alt="Instagram Logo">
+            </a>
+            <a href="#" aria-label="Twitter">
+                <img src="https://www.teahub.io/photos/full/11-115962_facebook-logo-png-transparent-background-facebook-png.png" 
+                alt="Twitter Logo" >
+            </a>
+            <a href="#" aria-label="YouTube">
+                <img src="https://static.vecteezy.com/system/resources/previews/018/930/575/original/youtube-logo-youtube-icon-transparent-free-png.png" 
+                alt="YouTube Logo">
+            </a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <section>
+            <p>© 2024, GameVerse, Inc. All rights reserved. Epic, Gameverse Games, the Gameverse logo, Fortnite, 
+            the Fortnite logo, Unreal, Unreal Engine, the Unreal Engine logo, Unreal Tournament, and the Unreal Tournament 
+            logo are trademarks or registered trademarks of Epic Games, Inc. in the United States of America and elsewhere. 
+            Other brands or product names are the trademarks of their respective owners.</p>
+
+            <p>Our websites may contain links to other sites and resources provided by third parties. These links are provided 
+            for your convenience only. Epic Games has no control over the contents of those sites or resources, and accepts no 
+            responsibility for them or for any loss or damage that may arise from your use of them.</p>
+        </section>
+
+        <div class="footer-policies">
+            <a href="#">Terms of Service</a> | 
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Store Refund Policy</a> |<a href="faq.html">FAQ's</a> |
+            <a href="https://game-verse-chat-bot.vercel.app/">Help&Support</a>
+        </div>
+
+        <div class="footer-logos_">
+            <img src="logologo.png" alt="GameVerse Logo" width="50">
+        </div>
+    </div>
+</footer>
+<script>
+function searchGames() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const gameItems = document.querySelectorAll('.game-items');
+    const otherSections = document.querySelectorAll('.sections');
+
+    let foundMatch = false;
+
+    gameItems.forEach(item => {
+        const gameText = item.innerText.toLowerCase();
+        if (gameText.includes(input)) {
+            item.style.display = '';
+            foundMatch = true;
+        } else {
+            item.style.display = 'none';
+        }
+    });
+
+    if (input) {
+        otherSections.forEach(section => {
+            const visibleGames = section.querySelectorAll('.game-items:not([style*="display: none"])');
+            section.style.display = visibleGames.length > 0 ? '' : 'none';
+        });
+    } else {
+        otherSections.forEach(section => section.style.display = '');
+        gameItems.forEach(item => item.style.display = '');
+    }
+}
+
+</script>
+
+<script src="main.js"></script>
+  <script src="nav.js"></script>
+  <script src="addtocart.js"></script>
+</body>
+</html>

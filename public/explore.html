@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Categories</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 90%;
+            max-width: 1200px;
+            flex-wrap: wrap;
+        }
+
+        .game-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 100%;
+            padding: 10px;
+            flex: 1;
+        }
+
+        .game-categories a button {
+            background-color: #333;
+            color: #fff;
+            border: 2px solid #888;
+            padding: 16px 26px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            flex: 1 1 calc(33.33% - 20px);
+            min-width: 100px;
+        }
+
+        .game-categories button:hover {
+            background-color: #555;
+        }
+
+        .best-action-games {
+            max-width: 100%;
+            padding: 20px;
+            flex: 1;
+            /* Set fixed width and height to avoid layout shifts */
+            width: 500px;
+            height: 300px;
+        }
+
+        .best-action-games img {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            object-fit: cover; /* Ensure the image covers the entire container */
+        }
+
+
+        @media only screen and (max-width: 600px) {
+            body{
+                height: 90vh;
+            }
+            .container{
+                max-width: 550px;
+            }
+            .game-categories{
+                gap: 10px;
+                padding: 2px;
+            }
+            .game-categories a button {  
+                padding: 7px 13px;
+                font-size: 9px;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                flex: 1 1 calc(33.33% - 20px);
+                min-width: 60px;
+            }
+            .best-action-games{
+                max-width: 100%;
+                padding: 20px;
+                flex: 1;
+                /* Set fixed width and height to avoid layout shifts */
+                width: 300px;
+                height: 200px;
+            }
+            .best-action-games img {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            object-fit: cover; /* Ensure the image covers the entire container */
+            margin-top: 30px;
+        }
+        }
+
+        @media only screen and (min-width: 601px) and (max-width: 1000px) {
+            body{
+                height: 91vh;
+            }
+            .container{
+                max-width: 500px;
+            }
+            .game-categories{
+                gap: 18px;
+                padding: 10px;
+            }
+            .game-categories a button {  
+                padding: 13px 22px;
+                font-size: 11px;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                flex: 1 1 calc(33.33% - 20px);
+                min-width: 70px;
+            }
+        
+            .best-action-games{
+                max-width: 100%;
+                padding: 20px;
+                flex: 1;
+                /* Set fixed width and height to avoid layout shifts */
+                width: 600px;
+                height: 280px;
+            }
+            .best-action-games img {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            object-fit: cover; /* Ensure the image covers the entire container */
+            margin-top: 30px; 
+        }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Game Categories Buttons -->
+        <div class="game-categories">
+            <a href="ActionGames.html" target="_top" onmouseover="changeImage('action.jpeg')" onmouseout="resetImage()">
+                <button>Action</button>
+            </a>
+            <a href="2PlayerGames.html" target="_top" onmouseover="changeImage('https://i.ytimg.com/vi/qoaTevJln7g/maxresdefault.jpg')" onmouseout="resetImage()">
+                <button>2 Player</button>
+            </a>
+            <a href="DrivingGames.html" target="_top" onmouseover="changeImage('https://t4.ftcdn.net/jpg/04/81/44/47/360_F_481444765_LbBHi1Q8LKneyN3TJwDBVF89AnRNSj0p.jpg')" onmouseout="resetImage()">
+                <button>Driving</button>
+            </a>
+            <a href="CasualGames.html" target="_top" onmouseover="changeImage('https://cdn.dribbble.com/users/12329/screenshots/1899216/icons-preview-2.png')" onmouseout="resetImage()">
+                <button>Casual</button>
+            </a>
+            <a href="CardGames.html" target="_top" onmouseover="changeImage('https://image.pngaaa.com/494/1165494-middle.png')" onmouseout="resetImage()">
+                <button>Card Games</button>
+            </a>
+            <a href="BoardGames.html" target="_top" onmouseover="changeImage('https://images.twinkl.co.uk/tw1n/image/private/t_630/u/builder/board-games-logo-colour-cmyk-1687979724.png')" onmouseout="resetImage()">
+                <button>Board Games</button>
+            </a>
+            <a href="SportsGames.html" target="#" onmouseover="changeImage('https://static.vecteezy.com/system/resources/previews/023/289/205/large_2x/sports-game-logo-design-vector.jpg')" onmouseout="resetImage()">
+                <button>Sports</button>
+            </a>
+            <a href="DressUpGames.html" target="_top" onmouseover="changeImage('https://images.crazygames.com/model-dress-up-girl-games/20230627112223/model-dress-up-girl-games-cover?auto=format%2Ccompress&q=45&cs=strip&ch=DPR&w=1200&h=630&fit=crop')" onmouseout="resetImage()">
+                <button>Dress Up</button>
+            </a>
+            <a href="PuzzleGames.html" target="_top" onmouseover="changeImage('https://images.designtrends.com/wp-content/uploads/2016/04/07112205/Beautiful-Puzzle-Logo.jpg')" onmouseout="resetImage()">
+                <button>Puzzle</button>
+            </a>
+            <a href="FreeGames.html" target="_top" onmouseover="changeImage('https://editors.dexerto.com/wp-content/uploads/2021/12/19/best-free-games-2.jpg')" onmouseout="resetImage()">
+                <button>Free Games</button>
+            </a>
+            <a href="kids_section.html" target="_top" onmouseover="changeImage('https://static.vecteezy.com/system/resources/previews/004/141/879/non_2x/kids-zone-logo-template-cartoon-colorful-letters-drawn-by-a-child-finger-placed-in-children-play-cubes-for-little-ones-sign-free-vector.jpg')" onmouseout="resetImage()">
+                <button>Kids Section</button>
+            </a>
+        </div>
+
+       
+        <div class="best-action-games">
+            <img src="explore_image.jpg" id="category-image" alt="Default Image">
+        </div>
+    </div>
+
+    <script>
+       
+        const defaultImageSrc = 'explore_image.jpg';
+
+        
+        function changeImage(imageSrc) {
+            const image = document.getElementById('category-image');
+            image.src = imageSrc;
+        }
+
+       
+        function resetImage() {
+            const image = document.getElementById('category-image');
+            image.src = defaultImageSrc;
+        }
+    </script>
+</body>
+</html>

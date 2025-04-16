@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gameverse Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #043246 0%, #d9cde7 100%);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+        
+
+        h1 {
+            font-size: 1.8rem;
+            color: #011114;
+            margin: 10px 0;
+            text-shadow: 0 0 10px rgba(1, 6, 7, 0.7);
+        }
+
+        .profile-container {
+            background-color:  #8ec6d4;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(4, 24, 29, 0.7);
+            max-width: 350px;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .profile-container:hover {
+            transform: scale(1.02);
+        }
+
+        .profile-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 3px solid #00CCFF;
+            box-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: #000203;
+            margin-bottom: 5px;
+            text-shadow: 0 0 10px rgba(1, 11, 13, 0.7);
+        }
+
+        #email {
+            font-size: 0.8rem;
+            color: #0c0505;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            padding: 8px;
+            background-color: #ffffff;
+            border: none;
+            color: rgb(18, 13, 13);
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px 0;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: #44acb6;
+        }
+
+        .profile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            text-align: left;
+        }
+
+        .profile-menu li {
+            padding: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #34727b;
+            transition: background-color 0.3s ease;
+            color: #000203;
+        }
+
+        .profile-menu li:hover {
+            background-color: #0f5b6e;
+        }
+
+        .footer {
+            margin-top: 10px;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            font-size: 0.8rem;
+        }
+
+        .footer ul li {
+            cursor: pointer;
+            transition: color 0.3s ease;
+            color: #000203;
+        }
+
+        .footer ul li:hover {
+            color: #00CCFF;
+        }
+
+        /* Edit Profile Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.4); 
+            padding-top: 60px; 
+        }
+
+        .modal-content {
+            background-color: #d0d9de;
+            margin: 5% auto; 
+            padding: 20px;
+            border: 1px solid #00CCFF;
+            width: 80%; 
+            max-width: 350px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 204, 255, 0.7);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #00CCFF;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .input-field {
+            margin: 8px 0;
+            padding: 8px;
+            width: calc(100% - 16px);
+            border: 1px solid #00CCFF;
+            border-radius: 5px;
+            background-color: #155b6b;
+            color: #fff;
+        }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .button-box button {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .message {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .button-box {
+        flex-direction: column;
+    }
+
+    .button-box button {
+        margin-bottom: 10px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <h1>Profile Page</h1>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <img id="profile-pic" src="default-profile.png" alt="Profile Picture" class="profile-pic">
+            <h2 id="username">@GameMaster</h2>
+            <p id="email">youremail@example.com</p>
+            <button class="btn" id="edit-profile-btn">Edit Profile</button>
+            <button class="btn" id="upload-picture-btn">Upload Picture</button>
+            <button class="btn" id="share-profile-btn">Share Profile</button>
+        </div>
+
+        <div class="profile-menu">
+            <ul>
+                <li><i class="icon">&#128276;</i> Notification Preferences</li>
+                <li><i class="icon">&#128274;</i> Privacy Preferences</li>
+                <li><i class="icon">&#9881;</i> Account Settings</li>
+                <a href="aboutus.html"><li id="logout"><i class="icon">&#128682;</i> Log Out</li></a>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <ul>
+                <li id="contact-us">Contact Us</li>
+                <li>Install App</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div id="editProfileModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Edit Profile</h2>
+            <input type="text" id="edit-username" class="input-field" placeholder="Username" required>
+            <input type="email" id="edit-email" class="input-field" placeholder="Email" required>
+            <button class="btn" id="save-changes-btn">Save Changes</button>
+        </div>
+    </div>
+
+    <!-- Upload Picture Modal -->
+    <div id="uploadPictureModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeUploadModal">&times;</span>
+            <h2>Upload Profile Picture</h2>
+            <input type="file" id="upload-input" class="input-field" accept="image/*" required>
+            <button class="btn" id="set-picture-btn">Set Picture</button>
+        </div>
+    </div>
+
+    <script>
+        // Fetch email and profile picture from localStorage
+        const email = localStorage.getItem('email');
+        const profileImage = localStorage.getItem('profileImage');
+        const username = localStorage.getItem('username') || '@GameMaster';
+
+        // Update profile page with username, email, and profile picture
+        if (email) {
+            document.getElementById('email').textContent = email;
+        }
+
+        if (profileImage) {
+            document.getElementById('profile-pic').src = profileImage;
+        }
+
+        document.getElementById('username').textContent = username;
+
+        // Edit Profile Modal
+        const editProfileModal = document.getElementById("editProfileModal");
+        const editUsernameInput = document.getElementById("edit-username");
+        const editEmailInput = document.getElementById("edit-email");
+        
+        document.getElementById('edit-profile-btn').addEventListener('click', function() {
+            editUsernameInput.value = username;
+            editEmailInput.value = email;
+            editProfileModal.style.display = "block";
+        });
+
+        document.getElementById('closeModal').onclick = function() {
+            editProfileModal.style.display = "none";
+        };
+
+        // Save Changes to localStorage
+        document.getElementById('save-changes-btn').addEventListener('click', function() {
+            const newUsername = editUsernameInput.value;
+            const newEmail = editEmailInput.value;
+
+            if (newUsername) {
+                localStorage.setItem('username', newUsername);
+                document.getElementById('username').textContent = newUsername;
+            }
+
+            if (newEmail) {
+                localStorage.setItem('email', newEmail);
+                document.getElementById('email').textContent = newEmail;
+            }
+
+            editProfileModal.style.display = "none";
+        });
+
+        // Upload Picture Modal
+        const uploadPictureModal = document.getElementById("uploadPictureModal");
+
+        document.getElementById('upload-picture-btn').addEventListener('click', function() {
+            uploadPictureModal.style.display = "block";
+        });
+
+        document.getElementById('closeUploadModal').onclick = function() {
+            uploadPictureModal.style.display = "none";
+        };
+
+        // Set new profile picture
+        document.getElementById('set-picture-btn').addEventListener('click', function() {
+            const fileInput = document.getElementById('upload-input');
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const newProfileImage = e.target.result;
+                    localStorage.setItem('profileImage', newProfileImage);
+                    document.getElementById('profile-pic').src = newProfileImage;
+                };
+                reader.readAsDataURL(file);
+            }
+
+            uploadPictureModal.style.display = "none";
+        });
+
+        // Close modal if clicked outside
+        window.onclick = function(event) {
+            if (event.target == editProfileModal) {
+                editProfileModal.style.display = "none";
+            }
+            if (event.target == uploadPictureModal) {
+                uploadPictureModal.style.display = "none";
+            }
+        };
+
+        // Logout Button Click Handler
+        document.getElementById('logout').addEventListener('click', function() {
+            localStorage.clear(); // Clear localStorage (logout)
+            window.location.href = 'log.html'; // Redirect to login page (adjust URL)
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,726 @@
+body,html{
+    background-color: #030303d2;
+      font-family: Arial, sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
+  color: white;
+  overflow-x: hidden;
+}
+
+
+#bgvid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+nav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: transparent;
+    padding: 20px 30px;
+    position: fixed;
+    top: 0;
+    width: 100%; 
+    z-index: 1000;
+    margin-left: 20px;
+  }
+  
+  .logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+  }
+  
+  /* Navigation Bar */
+  .nav-left {
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    margin-right: 0px;
+    gap: 20px;
+    position: relative;
+  }
+  
+  .nav-item {
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+  }
+  
+  .nav-item:hover {
+    color: #4568f7;
+  }
+  
+  #iframe-container {
+    display: none; /* Initially hidden */
+    position: fixed; /* Fixed to the viewport */
+    top: 0; /* Start at the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background: rgba(0, 0, 0, 0.7); /* Dark background with slight transparency */
+    z-index: 100; /* Ensure it is above other content */
+    overflow: hidden; /* Prevent scrolling */
+  }
+  
+  #iframe-container .iframe-wrapper {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the iframe container */
+    width: 80%; /* Default width for large screens */
+    height: 60%; /* Default height for large screens */
+    background-color: white; /* Background for iframe container */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Add shadow for visual effect */
+    position: relative;
+  }
+  
+  #iframe-container iframe {
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    border: none; /* Remove default iframe border */
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 200; /* Make sure it is above the iframe */
+  }
+  
+  .close-btn:hover {
+    color: rgb(51, 50, 50);
+  }
+  
+  .nav-middle {
+    margin-left: 0px; /* Removed margin-left */
+    margin-right: 0px;
+    flex-grow: 0.9;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .search-bar {
+    width: 63%;
+    padding: 10px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    background-color: #181818;
+    color: #ccc8e7;
+  }
+  
+  .nav-right {
+    margin-left: 0px; /* Removed margin-left */
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Reduced gap to 15px */
+    margin-right: 50px;
+  }
+  
+  .nav-item {
+    color: #ecebf4;
+    text-decoration: none;
+    font-size: 1.3em;
+    gap: 45px;
+  }
+  
+  .icon {
+    width: 38px;
+    height: 38px;
+    gap: 10px;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+
+
+
+
+
+  /* For small screens*/
+@media only screen and (max-width: 600px) {
+    .grid-item .game-title {
+      font-size: 0.4em;
+      margin: 5px 0;
+    }
+    h1{
+      font-size: 1.8em;
+      margin-top: 100px;
+    }
+    p{
+      font-size: 0.8em;
+      margin-bottom: 15px;
+    }
+    .logo{
+      width: 12px;
+      height: 12px;
+      margin-left: 1px;
+      margin-right: 1px;
+    }
+    .nav-middle{
+      flex-grow: 0.4;
+      margin-right: 0px;
+    }
+    .nav-right{
+      margin-left: 0px;
+      margin-right: 60px;
+      gap: 10px;
+    }
+    .nav-item{
+      font-size: 0.9em;
+      gap: 1px;
+      padding-left: 5px;
+    }
+    .search-bar{
+      padding: 13px;
+      font-size: 0.8em;
+      margin-left: -10px;
+  
+    }
+    .icon{
+      width: 12px;
+      height: 12px;
+    }
+    .nav-left{
+      gap: 6px;
+    }
+    .footer-top{
+      margin-bottom: 5px;
+      padding: 0 15px;
+    }
+    hr{
+      margin-top: 200px;
+      margin-bottom: 0;
+    }
+    .p_footer{
+      font-size: 0.6em;
+      margin-top: 10px;
+    }
+    .footer-nav{
+      font-size: 0.6em;
+    }
+    .footer-links{
+      font-size: 0.6em;
+    }
+    .grid-container{
+      grid-template-columns: repeat(4, 1fr)
+    }
+    #iframe-container .iframe-wrapper {
+      width: 80%; /* Adjust width for smaller screens */
+      height: 42%; /* Adjust height for smaller screens */
+    }
+  
+    #iframe-container iframe {
+      width: 100%; /* Ensure the iframe still takes full width */
+      height: 100%; /* Ensure the iframe still takes full height */
+    }
+  
+    .close-btn {
+      font-size: 20px; /* Smaller close button for mobile */
+    }
+  }
+  
+  /* For medium screens*/
+  @media only screen and (min-width: 601px) and (max-width: 1000px) {
+    .grid-item .game-title {
+      font-size: 0.6em;
+      margin: 7px 0;
+    }
+    h1{
+      font-size: 1.6em;
+      margin-top: 140px;
+    }
+    p{
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+    .logo{
+      width: 25px;
+      height: 25px;
+      margin-left: 1px;
+      margin-right: 5px;
+    }
+    .nav-middle{
+      flex-grow: 0.7;
+      margin-right: 0px;
+    }
+    .nav-right{
+      margin-left: 0px;
+      margin-right: 50px;
+      gap: 20px;
+    }
+    .nav-item{
+      font-size: 1.2em;
+      gap: 8px;
+      padding-left: 5px;
+    }
+    .search-bar{
+      padding: 13px;
+      font-size: 1.1em;
+      margin-left: -5px;
+    }
+    .icon{
+      width: 25px;
+      height: 25px;
+      gap: 15px;
+    }
+    .p_footer{
+      font-size: 0.8em;
+    }
+    .footer-nav{
+      font-size: 0.8em;
+    }
+    .footer-links{
+      font-size: 0.8em;
+      margin-top: 0;
+    }
+    hr{
+      margin-bottom: 0;
+    }
+    .grid-container{
+      grid-template-columns: repeat(5, 1fr)
+    }
+    #iframe-container .iframe-wrapper {
+      width: 85%; /* Slightly larger width for medium screens */
+      height: 55%; /* Adjust height */
+    }
+  
+    #iframe-container iframe {
+      width: 100%; /* Full width for medium screens */
+      height: 100%; /* Full height for medium screens */
+    }
+  
+    .close-btn {
+      font-size: 24px; /* Medium close button */
+    }
+  }
+  
+  /* For large screens */
+  @media only screen and (min-width: 1001px) {
+    .grid-item .game-title {
+      font-size: 1.1em;
+      margin: 12px 0;
+    }
+    h1{
+      margin-top: 160px;
+    }
+    #iframe-container .iframe-wrapper {
+      width: 80%; /* Default width for large screens */
+      height: 60%; /* Default height for large screens */
+  
+    }
+  
+    #iframe-container iframe {
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+    }
+  
+    .close-btn {
+      font-size: 28px; /* Larger close button */
+    }
+  }
+
+
+
+
+
+
+.h1{
+  margin-top: 180px;
+  font-size:50px;
+  font-weight: 800;
+  margin-left: 170px;
+  margin-bottom: 0;
+}
+.content1{
+  margin-top: 15px;
+  margin-left: 170px;
+}
+
+
+
+.games-section {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px;
+  background-color:transparent; /* Matches dark theme */
+  
+}
+
+.game-card {
+  background-color: #242222; /* Fallback color */
+  border-radius: 10px;
+  padding: 15px;
+  width: 345px;
+  height: 180px;
+  color: white;
+  text-align: center;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-repeat: no-repeat;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.game-card p, .game-card h3 {
+  z-index: 2;
+  position: relative;
+}
+
+.game-status {
+  margin-top: 180px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #00aaff; /* Light blue for "FREE NOW" */
+  padding: 5px;
+  border-radius: 4px;
+  color: #fff;
+  margin-bottom: 10px;
+  width: 365px;
+  margin-left: -15px;
+}
+
+.game-status.upcoming {
+  background-color: #000; /* Black for "COMING SOON" */
+}
+
+.game-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.game-date {
+  font-size: 14px;
+  color: #bbb;
+}
+
+
+
+
+.promo-container {
+  display: flex;
+  justify-content: space-between; /* Tight alignment */
+  margin-top: 170px;
+  max-width: 1175px;
+  margin-left: 170px;
+  padding: 0;
+}
+
+.promo-card {
+  width: 45%; /* Smaller cards */
+  border-radius: 8px;
+  text-align: center; /* Optional background for better visuals */
+  color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.promo-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.promo-card h2 {
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+.promo-card p {
+  font-size: 14px;
+  margin: 5px 0 15px;
+}
+
+.promo-card button {
+  background-color: #333;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.promo-card button:hover {
+  background-color: #555;
+}
+
+
+
+
+
+
+
+
+.grid-wrapper-sXv {
+  background-color:transparent;
+  font-family: Arial, sans-serif;
+  color: white;
+  display: flex;
+
+  margin-top: 110px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.category-card-LL8 {
+  background-color:transparent;
+  padding: 15px;
+  border-radius: 8px;
+  width: 350px;
+}
+
+.category-card-LL8 h2 {
+  margin-left: 48px;
+  font-size: 18px;
+  margin-bottom: 35px;
+  color: #fff;
+}
+
+.category-card-LL8 ul {
+  list-style: none;
+}
+
+.category-card-LL8 li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color:transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.category-card-LL8 li:hover {
+  background-color: #2b2b2b;
+  transform: scale(1.02);
+}
+
+.category-card-LL8 li img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.category-card-LL8 span {
+  font-weight: bold;
+  color: #fff;
+}
+
+.category-card-LL8 p {
+  margin-left: auto;
+  color: #b5b5b5;
+}
+
+.vertical-divider {
+  width: 2px;
+  background-color: #444;
+  height: auto;
+  margin: 0 20px;
+}
+
+/* General styling for wishlist icon and tooltip */
+.wishlist-icon {
+position: relative;
+display: flex;
+align-items: center;
+margin-left: 10px;
+cursor: pointer;
+}
+
+.plus-sign {
+font-size: 24px;
+color: #fff;
+transition: transform 0.2s ease;
+}
+
+.wishlist-icon:hover .plus-sign {
+transform: scale(1.2);
+}
+
+.wishlist-tooltip {
+visibility: hidden;
+width: 120px;
+background-color: #333;
+color: #fff;
+text-align: center;
+border-radius: 6px;
+padding: 5px;
+position: absolute;
+top: -35px;
+left: -10px;
+z-index: 1;
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+
+.wishlist-icon:hover .wishlist-tooltip {
+visibility: visible;
+opacity: 1;
+}
+
+
+
+
+.content2{
+  margin-left: 170px;
+  font-size: 22px;
+  margin-top: 100px;
+}
+
+.game-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  padding: 10px;
+  max-width: 1210px;
+  margin: 0 auto;
+  margin-left: 165px;
+  margin-top: 40px;
+}
+
+.game-item {
+  text-align: center; /* Center the content */
+}
+
+.game-box {
+  background-color: #1f1f1f;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  height: 380px;
+}
+
+.game-box:hover {
+  transform: scale(1.05);
+}
+
+.game-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-info {
+  padding: 20px;
+  color: #ffffff;
+}
+
+.game-info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.game-info p {
+  font-size: 1rem;
+  color: #00cc66;
+}
+
+
+
+hr{
+  margin-top: 40px;
+  opacity: 0.5;
+}
+.footer {
+  background-color: rgba(3, 3, 3, 0.82);
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Footer Top Section - Social Icons */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 40px;  /* Set equal width */
+  height: 40px; /* Set equal height */
+  margin: 0 10px;
+}
+
+.social-icons a img {
+  width: 100%;  /* Fit image within the container */
+  height: 100%; /* Maintain aspect ratio inside container */
+  object-fit: contain;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.2);
+}
+
+/* Footer Bottom Section - Text, Policies, and Logos */
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding-top: 20px;
+  text-align: left;
+}
+
+/* Policies Links */
+.footer-policies {
+  margin: 20px 0;
+}
+
+.footer-policies a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-policies a:hover {
+  text-decoration: underline;
+}
+
+/* Logos Section */
+.footer-logos {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.footer-logos img {
+  width: 50px;
+  height: auto;
+  margin-top: 10px;
+}
+
+.footer-logos_ img {
+  width: 80px;
+  height: auto;
+  margin-top: 0px;
+}
